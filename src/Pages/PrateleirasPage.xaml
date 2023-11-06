@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Biblioconecta.ViewModels"
+             xmlns:model="clr-namespace:Biblioconecta.Data.Models"
+             x:Class="Biblioconecta.Pages.PrateleirasPage"
+             x:DataType="vm:PrateleirasViewModel"
+             Title="Meus livros">
+    <Grid
+        ColumnDefinitions="*"
+        RowDefinitions="*"
+        Padding="10">
+
+        <RefreshView
+            Grid.Column="0"
+            Grid.Row="0"
+            Command="{Binding RefreshCommand}"
+            IsRefreshing="{Binding IsRefreshing}">
+
+            <CollectionView
+                ItemsSource="{Binding Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Prateleira">
+                        <Grid
+                            ColumnDefinitions="auto,*,auto"
+                            RowDefinitions="*"
+                            ColumnSpacing="15"
+                            Padding="10">
+
+                            <Border
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Stroke="{StaticResource Tertiary}"
+                                StrokeShape="RoundRectangle 0,8,8,0"
+                                BackgroundColor="{StaticResource Tertiary}"
+                                HeightRequest="56"
+                                WidthRequest="56">
+
+                                <Label
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    FontFamily="OpenSansSemibold"
+                                    FontSize="24"
+                                    TextColor="{StaticResource Primary}"
+                                    Text="{Binding Iniciais}" />
+
+                            </Border>
+
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                Grid.Row="0">
+                                <Label
+                                    FontFamily="OpenSansSemibold"
+                                    FontSize="16"
+                                    Text="{Binding Nome}" />
+                                <Label 
+                                    Text="{Binding Quantidade, StringFormat='{0} livros'}" />
+                            </VerticalStackLayout>
+
+                            <Button
+                                Grid.Column="2"
+                                Grid.Row="0"
+                                FontFamily="FontAwesomeRegular"
+                                VerticalOptions="Center"
+                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:PrateleirasViewModel}}, Path=DeleteCommand}"
+                                CommandParameter="{Binding .}"
+                                Text="{StaticResource fa-trash-can}"
+                                Style="{StaticResource IconButton}">
+                            </Button>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+        <Button
+            Grid.Column="0"
+            Grid.Row="0"
+            Margin="16"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Command="{Binding EditCommand}"
+            Text="{StaticResource fa-plus}"
+            Style="{StaticResource Fab}"/>
+
+    </Grid>
+</ContentPage>

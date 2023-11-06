@@ -1,0 +1,83 @@
+is_global = true
+build_property.TargetFramework = net7.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Biblioconecta
+build_property.ProjectDir = /Users/ellenmoura/Projetos/biblioconecta/src/
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/Pages/FavoritosPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.Pages.FavoritosPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/FavoritosPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/FavoritosPage.xaml
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/Pages/InicioPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.Pages.InicioPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/InicioPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/InicioPage.xaml
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/Pages/LivroEditPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.Pages.LivroEditPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/LivroEditPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/LivroEditPage.xaml
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/Pages/LivrosPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.Pages.LivrosPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/LivrosPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/LivrosPage.xaml
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/Pages/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.Pages.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/LoginPage.xaml
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/Pages/PrateleirasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.Pages.PrateleirasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/PrateleirasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/PrateleirasPage.xaml
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/Pages/RegistroPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.Pages.RegistroPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/RegistroPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/RegistroPage.xaml
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/Resources/Styles/FontAwesome.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.Resources.Styles.FontAwesome.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/FontAwesome.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/FontAwesome.xaml
+
+[/Users/ellenmoura/Projetos/biblioconecta/src/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Biblioconecta.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml

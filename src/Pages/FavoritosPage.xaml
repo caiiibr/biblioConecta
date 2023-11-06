@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Biblioconecta.ViewModels"
+             xmlns:model="clr-namespace:Biblioconecta.Data.Models"
+             x:Class="Biblioconecta.Pages.FavoritosPage"
+             x:DataType="vm:FavoritosViewModel"
+             Title="Meus livros">
+    <Grid
+        ColumnDefinitions="*"
+        RowDefinitions="*"
+        Padding="10">
+
+        <RefreshView
+            Grid.Column="0"
+            Grid.Row="0"
+            Command="{Binding RefreshCommand}"
+            IsRefreshing="{Binding IsRefreshing}">
+
+            <CollectionView
+                ItemsSource="{Binding Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Livro">
+                        <Grid
+                            ColumnDefinitions="auto,*,auto"
+                            RowDefinitions="auto,auto"
+                            ColumnSpacing="15"
+                            Padding="10">
+
+                            <Image
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Aspect="AspectFit"
+                                Source="{Binding ImagemUrl}"
+                                HeightRequest="90">
+                                <Image.Shadow>
+                                    <Shadow
+                                        Brush="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray200}}"
+                                        Offset="5,10"
+                                        Radius="20"
+                                        Opacity="0.25" />
+                                </Image.Shadow>
+                            </Image>
+
+                            <Border
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                BackgroundColor="Transparent"
+                                Stroke="{StaticResource Gray200}"
+                                IsVisible="{Binding SemImageUrl}"
+                                StrokeShape="RoundRectangle 8"
+                                HeightRequest="90"
+                                WidthRequest="60">
+                                <Border.Triggers>
+                                    <DataTrigger TargetType="Border" Binding="{Binding ImagemUrl}" Value="">
+                                        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray600}}" />
+                                    </DataTrigger>
+                                </Border.Triggers>
+                                <Border.Shadow>
+                                    <Shadow
+                                        Brush="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray200}}"
+                                        Offset="5,10"
+                                        Radius="20"
+                                        Opacity="0.25" />
+                                </Border.Shadow>
+
+                                <Label
+                                    FontSize="12"
+                                    HorizontalTextAlignment="Center"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Text="Sem&#10;imagem"/>
+
+                            </Border>
+
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                VerticalOptions="Start">
+                                <Label
+                                    FontFamily="OpenSansSemibold"
+                                    FontSize="16"
+                                    Text="{Binding Titulo}" />
+                                <Label 
+                                    Text="{Binding Autor}" />
+                            </VerticalStackLayout>
+
+                            <Grid
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                ColumnDefinitions="*,*"
+                                RowDefinitions="auto"
+                                VerticalOptions="Center">
+                                <Label
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Text="{Binding AnoPublicacao}" />
+                                <Label
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    Text="{Binding Paginas, StringFormat='{0} páginas'}" />
+                            </Grid>
+
+                            <Button
+                                Grid.Column="2"
+                                Grid.Row="0"
+                                FontFamily="FontAwesomeRegular"
+                                VerticalOptions="Center"
+                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:FavoritosViewModel}}, Path=FavoritoCommand}"
+                                CommandParameter="{Binding .}"
+                                Text="{StaticResource fa-heart}"
+                                Style="{StaticResource IconButton}">
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding Favorito}" Value="True">
+                                        <Setter Property="FontFamily" Value="FontAwesomeSolid" />
+                                        <Setter Property="TextColor" Value="Red" />
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+
+                            <Button
+                                Grid.Column="2"
+                                Grid.Row="1"
+                                FontFamily="FontAwesomeRegular"
+                                VerticalOptions="Center"
+                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:FavoritosViewModel}}, Path=DeleteCommand}"
+                                CommandParameter="{Binding .}"
+                                Text="{StaticResource fa-trash-can}"
+                                Style="{StaticResource IconButton}">
+                            </Button>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+        <Button
+            Grid.Column="0"
+            Grid.Row="0"
+            Margin="16"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Command="{Binding EditCommand}"
+            Text="{StaticResource fa-plus}"
+            Style="{StaticResource Fab}"/>
+
+    </Grid>
+</ContentPage>

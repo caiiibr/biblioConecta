@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - /Users/ellenmoura/Projetos/biblioConecta/src/bin/Debug/net7.0-maccatalyst/maccatalyst-x64/Biblioconecta.app/Contents/MonoBundle/libe_sqlite3.dylib

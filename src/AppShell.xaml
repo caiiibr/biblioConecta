@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Biblioconecta.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Biblioconecta.Pages"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Inicio"
+        ContentTemplate="{DataTemplate pages:InicioPage}"
+        Route="InicioPage"/>
+
+    <TabBar
+        FlyoutDisplayOptions="AsMultipleItems">
+
+        <Tab Title="Patreleiras">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{StaticResource fa-border-all}" Size="14" />
+            </Tab.Icon>
+
+            <ShellContent 
+                Title="Prateleiras"
+                ContentTemplate="{DataTemplate pages:PrateleirasPage}"
+                Route="PrateleirasPage" />
+
+            <ShellContent
+                Title="Livros"
+                ContentTemplate="{DataTemplate pages:LivrosPage}"
+                Route="LivrosPage"/>
+
+            <ShellContent
+                Title="Favoritos"
+                ContentTemplate="{DataTemplate pages:FavoritosPage}"
+                Route="FavoritosPage"/>
+        </Tab>
+
+        <ShellContent 
+            Title="Scanear ISBN">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{StaticResource fa-barcode}" Size="14" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent
+            Title="Novo livro"
+            ContentTemplate="{DataTemplate pages:LivroEditPage}"
+            Route="LivroEditPage" >
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{StaticResource fa-square-plus}" Size="14" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+    </TabBar>
+
+</Shell>

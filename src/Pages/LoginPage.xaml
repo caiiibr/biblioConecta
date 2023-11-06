@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Biblioconecta.Pages.LoginPage"
+             Title="Entrar no aplicativo">
+    <ScrollView>
+        <Grid
+            ColumnDefinitions="*"
+            RowDefinitions="*,auto,auto,auto,auto,*"
+            Padding="20"
+            RowSpacing="20">
+
+            <Image
+                Grid.Column="0"
+                Grid.Row="1"
+                Aspect="AspectFit"
+                Margin="60,40"
+                Source="logo_reduzida.png" />
+
+            <VerticalStackLayout
+                Grid.Column="0"
+                Grid.Row="2"
+                Spacing="20">
+                <Border Style="{StaticResource Entry}">
+                    <Entry
+                        x:Name="EmailEntry"
+                        Placeholder="email@email.com" />
+                </Border>
+
+                <Border Style="{StaticResource Entry}">
+                    <Entry
+                        x:Name="SenhaEntry"
+                        IsPassword="True" Placeholder="Senha" />
+                </Border>
+            </VerticalStackLayout>
+
+            <Button
+                Grid.Column="0"
+                Grid.Row="3"
+                Text="Entrar"
+                Clicked="Entrar_Clicked"/>
+
+            <HorizontalStackLayout
+                Grid.Column="0"
+                Grid.Row="4"
+                HorizontalOptions="Center">
+                <Label Text="Esqueceu sua senha? " />
+                <Label Text="Clique aqui" />
+            </HorizontalStackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
