@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vxS3+IsAPt+e9bAFPXfLKaNcg57cUoIKJoCb3eMd29zujhgtpVbB040U1o19HboDMfdj8/IWYII+X0VaCJIrPA==",
+  "dgSpecHash": "Sa3OGk3ZBHsFO76ht6ENqg0tuSOPpKmkQBtPfuGcBEpom44wSJUUNFCblRCoOJkzCDgDLDPzTKFAQBB5pgq2zA==",
   "success": true,
-  "projectFilePath": "/Users/ellenmoura/Projetos/biblioconecta/src/Biblioconecta.csproj",
+  "projectFilePath": "/Users/ellenmoura/Projetos/biblioConecta/src/Biblioconecta.csproj",
   "expectedPackageFiles": [
     "/Users/ellenmoura/.nuget/packages/googlegson/2.9.1.1/googlegson.2.9.1.1.nupkg.sha512",
     "/Users/ellenmoura/.nuget/packages/microsoft.extensions.configuration/7.0.0/microsoft.extensions.configuration.7.0.0.nupkg.sha512",

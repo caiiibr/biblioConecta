@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ellenmoura/Projetos/biblioconecta/src/Biblioconecta.csproj": {}
+    "/Users/ellenmoura/Projetos/biblioConecta/src/Biblioconecta.csproj": {}
   },
   "projects": {
-    "/Users/ellenmoura/Projetos/biblioconecta/src/Biblioconecta.csproj": {
+    "/Users/ellenmoura/Projetos/biblioConecta/src/Biblioconecta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ellenmoura/Projetos/biblioconecta/src/Biblioconecta.csproj",
+        "projectUniqueName": "/Users/ellenmoura/Projetos/biblioConecta/src/Biblioconecta.csproj",
         "projectName": "Biblioconecta",
-        "projectPath": "/Users/ellenmoura/Projetos/biblioconecta/src/Biblioconecta.csproj",
+        "projectPath": "/Users/ellenmoura/Projetos/biblioConecta/src/Biblioconecta.csproj",
         "packagesPath": "/Users/ellenmoura/.nuget/packages/",
-        "outputPath": "/Users/ellenmoura/Projetos/biblioconecta/src/obj/",
+        "outputPath": "/Users/ellenmoura/Projetos/biblioConecta/src/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
