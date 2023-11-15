@@ -7,6 +7,8 @@ public class Prateleira
     [PrimaryKey]
     [AutoIncrement]
     public int Id { get; set; }
+    [Indexed]
+    public int UsuarioId { get; set; }
     public string Nome { get; set; } = string.Empty;
     public int Quantidade { get; set; }
     [Ignore]

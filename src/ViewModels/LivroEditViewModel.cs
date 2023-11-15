@@ -22,6 +22,7 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
     private string descricao = string.Empty;
     private bool favorito = false;
     private bool lido = false;
+    private string imagemUrl = string.Empty;
     private Prateleira? prateleira;
 
     public int Id { get => id; set => SetProperty(ref id, value); }
@@ -38,6 +39,7 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
     public string Descricao { get => descricao; set => SetProperty(ref descricao, value); }
     public bool Favorito { get => favorito; set => SetProperty(ref favorito, value); }
     public bool Lido { get => lido; set => SetProperty(ref lido, value); }
+    public string ImagemUrl { get => imagemUrl; set => SetProperty(ref imagemUrl, value); }
     public Prateleira? Prateleira { get => prateleira; set => SetProperty(ref prateleira, value); }
 
     public ICommand SaveCommand { get; }
@@ -54,12 +56,13 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
 
     public async void ApplyQueryAttributes(IDictionary<string, object> query)
     {
+        await Reset();
         if (query.TryGetValue("id", out object? value))
         {
             if (value != null)
             {
                 Id = Convert.ToInt32(value);
-                var livro = await database.GetLivroAsync(Id);
+                var livro = await database.GetLivroAsync(Settings.Usuario?.Id ?? 0, Id);
                 if (livro != null)
                 {
                     PrateleiraId = livro.PrateleiraId;
@@ -75,6 +78,7 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
                     Descricao = livro.Descricao;
                     Favorito = livro.Favorito;
                     Lido = livro.Lido;
+                    ImagemUrl = livro.ImagemUrl;
 
                     Prateleira = Prateleiras.FirstOrDefault(e => e.Id == PrateleiraId);
                 }
@@ -82,10 +86,10 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
         }
     }
 
-    public async Task Init()
+    public async Task Reset()
     {
         Prateleiras.Clear();
-        var prats = await database.GetPrateleirasAsync();
+        var prats = await database.GetPrateleirasAsync(Settings.Usuario?.Id ?? 0);
         foreach (var item in prats)
         {
             Prateleiras.Add(item);
@@ -105,10 +109,12 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
         Descricao = string.Empty;
         Favorito = false;
         Lido = false;
+        ImagemUrl = string.Empty;
     }
 
     public async Task CancelAsync()
     {
+        await Reset();
         await Shell.Current.GoToAsync("//LivrosPage");
     }
 
@@ -135,6 +141,7 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
         Livro value = new()
         {
             Id = Id,
+            UsuarioId = Settings.Usuario?.Id ?? 0,
             PrateleiraId = Prateleira?.Id ?? 0,
             Titulo = Titulo,
             Subtitulo = Subtitulo,
@@ -147,9 +154,11 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
             ISBN = ISBN,
             Descricao = Descricao,
             Favorito = Favorito,
-            Lido = Lido
+            Lido = Lido,
+            ImagemUrl = ImagemUrl
         };
         await database.SaveLivroAsync(value);
+        await Reset();
         await Shell.Current.GoToAsync("//LivrosPage");
     }
 }

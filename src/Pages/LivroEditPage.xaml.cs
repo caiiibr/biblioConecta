@@ -9,10 +9,4 @@ public partial class LivroEditPage : ContentPage
         InitializeComponent();
         BindingContext = viewModel;
     }
-
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-        await ((LivroEditViewModel)BindingContext).Init();
-    }
 }

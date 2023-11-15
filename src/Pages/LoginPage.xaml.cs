@@ -33,6 +33,7 @@ public partial class LoginPage : ContentPage
             return;
         }
 
+        Settings.Usuario = usuario;
         await Shell.Current.GoToAsync("//PrateleirasPage");
     }
 

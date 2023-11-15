@@ -30,40 +30,47 @@ public class BiblioconectaDatabase
         return await Connection.DeleteAsync(value) > 0;
     }
 
-    public async Task<List<Livro>> GetLivrosAsync()
+    public async Task<List<Livro>> GetLivrosAsync(int usuarioId)
     {
         await Init();
-        return await Connection.Table<Livro>().ToListAsync();
+        return await Connection.Table<Livro>()
+            .Where(e => e.UsuarioId == usuarioId)
+            .OrderBy(e => e.Titulo)
+            .ToListAsync();
     }
 
-    public async Task<List<Livro>> GetLivrosFavoritosAsync()
+    public async Task<List<Livro>> GetLivrosFavoritosAsync(int usuarioId)
     {
         await Init();
-        return await Connection.Table<Livro>().Where(e => e.Favorito == true).ToListAsync();
+        return await Connection.Table<Livro>()
+            .Where(e => e.UsuarioId == usuarioId && e.Favorito == true)
+            .OrderBy(e => e.Titulo)
+            .ToListAsync();
     }
 
-    public async Task<Livro> GetLivroAsync(int id)
+    public async Task<Livro> GetLivroAsync(int usuarioId, int id)
     {
         await Init();
-        return await Connection.Table<Livro>().Where(e => e.Id == id).FirstOrDefaultAsync();
+        return await Connection.Table<Livro>()
+            .Where(e => e.UsuarioId == usuarioId && e.Id == id)
+            .FirstOrDefaultAsync();
     }
 
-    public async Task<List<Livro>> GetLivrosAsync(int prateleiraId)
+    public async Task<List<Prateleira>> GetPrateleirasAsync(int usuarioId)
     {
         await Init();
-        return await Connection.Table<Livro>().Where(e => e.PrateleiraId == prateleiraId).ToListAsync();
+        return await Connection.Table<Prateleira>()
+            .Where(e => e.UsuarioId == usuarioId)
+            .OrderBy(e => e.Nome)
+            .ToListAsync();
     }
 
-    public async Task<Prateleira> GetPrateleiraAsync(int id)
+    public async Task<Prateleira> GetPrateleiraAsync(int usuarioId, int prateleiraId)
     {
         await Init();
-        return await Connection.Table<Prateleira>().Where(e => e.Id == id).FirstOrDefaultAsync();
-    }
-
-    public async Task<List<Prateleira>> GetPrateleirasAsync()
-    {
-        await Init();
-        return await Connection.Table<Prateleira>().ToListAsync();
+        return await Connection.Table<Prateleira>()
+            .Where(e => e.UsuarioId == usuarioId && e.Id == prateleiraId)
+            .FirstOrDefaultAsync();
     }
 
     public async Task<Usuario?> GetUsuarioAsync(string email)
@@ -84,7 +91,7 @@ public class BiblioconectaDatabase
         {
             _ = await Connection.InsertAsync(value);
         }
-        var prateleira = await GetPrateleiraAsync(value.PrateleiraId);
+        var prateleira = await GetPrateleiraAsync(Settings.Usuario?.Id ?? 0, value.PrateleiraId);
         if (prateleira != null)
         {
             int quantidade = await Connection.Table<Livro>().CountAsync(e => e.PrateleiraId == value.PrateleiraId);

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Biblioconecta.Pages.MinhaContaPage"
+             Title="Minha Conta">
+    <ScrollView>
+        <Grid
+            ColumnDefinitions="*"
+            RowDefinitions="auto,auto,*,auto"
+            Padding="20"
+            RowSpacing="20">
+
+            <VerticalStackLayout
+                Grid.Column="0"
+                Grid.Row="0"
+                Padding="40">
+
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="80"
+                    Source="logo_inicial.png" />
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="20"
+                    Source="logo_reduzida.png" />
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+                Grid.Column="0"
+                Grid.Row="1"
+                Spacing="20">
+                <Border Style="{StaticResource Entry}">
+                    <Entry
+                        x:Name="NomeEntry"
+                        Placeholder="Nome completo" />
+                </Border>
+
+                <Border Style="{StaticResource Entry}">
+                    <Entry
+                        x:Name="EmailEntry"
+                        Placeholder="email@email.com" />
+                </Border>
+
+                <Border Style="{StaticResource Entry}">
+                    <Entry
+                        x:Name="PasswordEntry"
+                        IsPassword="True"
+                        Placeholder="nova senha" />
+                </Border>
+            </VerticalStackLayout>
+
+            <Grid
+                Grid.Column="0"
+                Grid.Row="3"
+                ColumnDefinitions="*"
+                RowDefinitions="auto,auto"
+                RowSpacing="20">
+
+                <Button
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Text="Salvar"
+                    Clicked="Salvar_Clicked"/>
+
+                <Button
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Text="Desconectar"
+                    Style="{StaticResource LinkButton}"
+                    Clicked="Desconectar_Clicked">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            FontFamily="FontAwesomeSolid"
+                            Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+                            Glyph="{StaticResource fa-arrow-right-from-bracket}" Size="18" />
+                    </Button.ImageSource>
+                </Button>
+
+            </Grid>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -12,6 +12,7 @@ public class PrateleirasViewModel : BaseViewModel
 
     public ICommand DeleteCommand { get; }
     public ICommand EditCommand { get; }
+    public ICommand LivrosCommand { get; }
     public ICommand RefreshCommand { get; }
     public ObservableCollection<Prateleira> Items { get; } = new();
     public bool IsRefreshing { get => isRefreshing; set => SetProperty(ref isRefreshing, value); }
@@ -21,13 +22,14 @@ public class PrateleirasViewModel : BaseViewModel
         this.database = database;
         DeleteCommand = new Command<Prateleira>(async (value) => await DeleteItemAsync(value));
         EditCommand = new Command<Prateleira?>(async (value) => await EditItemAsync(value));
+        LivrosCommand = new Command<Prateleira>(async (value) => await GoToLivros(value));
         RefreshCommand = new Command(async () => await GetItemsAsync());
     }
 
     public async Task GetItemsAsync()
     {
         IsRefreshing = true;
-        var result = await database.GetPrateleirasAsync();
+        var result = await database.GetPrateleirasAsync(Settings.Usuario?.Id ?? 0);
         Items.Clear();
         foreach (var item in result.OrderBy(e => e.Nome))
         {
@@ -43,6 +45,7 @@ public class PrateleirasViewModel : BaseViewModel
         if (!string.IsNullOrWhiteSpace(result))
         {
             value = value ?? new();
+            value.UsuarioId = Settings.Usuario?.Id ?? 0;
             value.Nome = result;
 
             await database.SavePrateleiraAsync(value);
@@ -58,5 +61,10 @@ public class PrateleirasViewModel : BaseViewModel
             await database.DeletePrateleiraAsync(value);
             await GetItemsAsync();
         }
+    }
+
+    public async Task GoToLivros(Prateleira value)
+    {
+        await Shell.Current.GoToAsync($"//LivrosPage?prateleiraId={value.Id}");
     }
 }

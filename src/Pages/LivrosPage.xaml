@@ -8,12 +8,52 @@
              Title="Meus livros">
     <Grid
         ColumnDefinitions="*"
-        RowDefinitions="*"
+        RowDefinitions="auto,auto,*"
+        RowSpacing="20"
         Padding="10">
+
+        <SearchBar
+            Grid.Column="0"
+            Grid.Row="0" 
+            SearchCommand="{Binding SearchCommand}"
+            SearchCommandParameter="{Binding SearchText}"
+            Text="{Binding SearchText}"
+            TextChanged="SearchBar_TextChanged"/>
+
+        <CollectionView
+            Grid.Column="0"
+            Grid.Row="1"
+            ItemsSource="{Binding Prateleiras}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="5" Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Prateleira">
+                    <Border
+                        StrokeShape="RoundRectangle 14"
+                        Padding="12,7">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:LivrosViewModel}}, Path=FilterCommand}"
+                                CommandParameter="{Binding .}" />
+                        </Border.GestureRecognizers>
+                        
+                        <Label
+                            Text="{Binding Nome}">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" Binding="{Binding Id}" Value="{Binding Source={x:RelativeSource AncestorType={x:Type vm:LivrosViewModel}}, Path=PrateleiraId}">
+                                    <Setter Property="FontFamily" Value="OpenSansSemibold" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
         <RefreshView
             Grid.Column="0"
-            Grid.Row="0"
+            Grid.Row="2"
             Command="{Binding RefreshCommand}"
             IsRefreshing="{Binding IsRefreshing}">
 
@@ -26,6 +66,11 @@
                             RowDefinitions="auto,auto"
                             ColumnSpacing="15"
                             Padding="10">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:LivrosViewModel}}, Path=EditCommand}"
+                                    CommandParameter="{Binding .}" />
+                            </Grid.GestureRecognizers>
 
                             <Image
                                 Grid.Column="0"
@@ -108,7 +153,7 @@
                                 Grid.Row="0"
                                 FontFamily="FontAwesomeRegular"
                                 VerticalOptions="Center"
-                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:LivrosViewModel}}, Path=FavoritoCommand}"
+                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:LivrosViewModel}}, Path=FavoriteCommand}"
                                 CommandParameter="{Binding .}"
                                 Text="{StaticResource fa-heart}"
                                 Style="{StaticResource IconButton}">
@@ -139,7 +184,7 @@
 
         <Button
             Grid.Column="0"
-            Grid.Row="0"
+            Grid.Row="2"
             Margin="16"
             HorizontalOptions="End"
             VerticalOptions="End"

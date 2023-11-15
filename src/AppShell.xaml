@@ -12,11 +12,11 @@
         Route="InicioPage"/>
 
     <TabBar
-        FlyoutDisplayOptions="AsMultipleItems">
+        FlyoutDisplayOptions="AsSingleItem">
 
-        <Tab Title="Patreleiras">
+        <Tab Title="Patreleiras" FlyoutDisplayOptions="AsSingleItem">
             <Tab.Icon>
-                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{StaticResource fa-border-all}" Size="14" />
+                <FontImageSource FontFamily="FontAwesomeRegular" Glyph="{StaticResource fa-chart-bar}" Size="14" />
             </Tab.Icon>
 
             <ShellContent 
@@ -35,19 +35,21 @@
                 Route="FavoritosPage"/>
         </Tab>
 
-        <ShellContent 
-            Title="Scanear ISBN">
-            <ShellContent.Icon>
-                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{StaticResource fa-barcode}" Size="14" />
-            </ShellContent.Icon>
-        </ShellContent>
-
         <ShellContent
             Title="Novo livro"
             ContentTemplate="{DataTemplate pages:LivroEditPage}"
             Route="LivroEditPage" >
             <ShellContent.Icon>
-                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{StaticResource fa-square-plus}" Size="14" />
+                <FontImageSource FontFamily="FontAwesomeRegular" Glyph="{StaticResource fa-square-plus}" Size="14" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent 
+            Title="Minha conta"
+            ContentTemplate="{DataTemplate pages:MinhaContaPage}"
+            Route="MinhaContaPage">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="FontAwesomeRegular" Glyph="{StaticResource fa-user}" Size="14" />
             </ShellContent.Icon>
         </ShellContent>
 

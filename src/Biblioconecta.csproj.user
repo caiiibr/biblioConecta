@@ -23,6 +23,9 @@
     <MauiXaml Update="Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\MinhaContaPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\PrateleirasPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

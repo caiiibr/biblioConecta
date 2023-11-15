@@ -13,6 +13,14 @@ public partial class LivrosPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        await ((LivrosViewModel)BindingContext).GetItemsAsync();
+        await ((LivrosViewModel)BindingContext).GetItemsAsync(string.Empty);
+    }
+
+    private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        if (string.IsNullOrEmpty(e.NewTextValue))
+        {
+            await((LivrosViewModel)BindingContext).GetItemsAsync(string.Empty);
+        }
     }
 }

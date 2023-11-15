@@ -8,10 +8,14 @@ public class Livro
     [AutoIncrement]
     public int Id { get; set; }
     [Indexed]
+    public int UsuarioId { get; set; }
+    [Indexed]
     public int PrateleiraId { get; set; }
+    [Indexed]
     public string Titulo { get; set; } = string.Empty;
     public string Subtitulo { get; set; } = string.Empty;
     public string ImagemUrl { get; set; } = string.Empty;
+    [Indexed]
     public string Autor { get; set; } = string.Empty;
     public string Editora { get; set; } = string.Empty;
     public string Edicao { get; set; } = string.Empty;

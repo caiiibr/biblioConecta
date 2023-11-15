@@ -14,6 +14,13 @@ public partial class InicioPage : ContentPage
 
     private async void Entrar_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//LoginPage");
+        if (Settings.Usuario != null)
+        {
+            await Shell.Current.GoToAsync("//PrateleirasPage");
+        }
+        else
+        {
+            await Shell.Current.GoToAsync("//LoginPage");
+        }
     }
 }

@@ -21,35 +21,37 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 fonts.AddFont("Font-Awesome-6-Free-Solid-900.otf", "FontAwesomeSolid");
                 fonts.AddFont("Font-Awesome-6-Free-Regular-400.otf", "FontAwesomeRegular");
+                fonts.AddFont("tabler-icons.ttf", "Tabler");
             });
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
 #if ANDROID
-            Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("NoUnderline", (h, v) =>
-            {
-                // Remove underline:
-                h.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToAndroid());
-            });
-            Microsoft.Maui.Handlers.EditorHandler.Mapper.AppendToMapping("NoUnderline", (h, v) =>
-            {
-                // Remove underline:
-                h.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToAndroid());
-            });
+        Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("NoUnderline", (h, v) =>
+        {
+            // Remove underline:
+            h.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToAndroid());
+        });
+        Microsoft.Maui.Handlers.EditorHandler.Mapper.AppendToMapping("NoUnderline", (h, v) =>
+        {
+            // Remove underline:
+            h.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToAndroid());
+        });
 #endif
 
         builder.Services.AddSingleton<FavoritosPage>();
         builder.Services.AddSingleton<LivrosPage>();
+        builder.Services.AddSingleton<MinhaContaPage>();
         builder.Services.AddSingleton<PrateleirasPage>();
 
-        builder.Services.AddScoped<LivroEditPage>();
+        builder.Services.AddSingleton<LivroEditPage>();
         builder.Services.AddTransient<LoginPage>();
         builder.Services.AddTransient<RegistroPage>();
 
         builder.Services.AddSingleton<PrateleirasViewModel>();
         builder.Services.AddSingleton<FavoritosViewModel>();
         builder.Services.AddSingleton<LivrosViewModel>();
-        builder.Services.AddScoped<LivroEditViewModel>();
+        builder.Services.AddSingleton<LivroEditViewModel>();
 
         builder.Services.AddSingleton<BiblioconectaDatabase>();
 

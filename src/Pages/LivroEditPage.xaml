@@ -9,159 +9,146 @@
     <ScrollView>
         <Grid
             ColumnDefinitions="*"
-            RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto"
+            RowDefinitions="*"
             RowSpacing="10"
             Padding="20">
 
-            <Border
+            <VerticalStackLayout
                 Grid.Column="0"
                 Grid.Row="0"
-                Style="{StaticResource Entry}">
-                <Picker
-                    ItemsSource="{Binding Prateleiras}"
-                    SelectedItem="{Binding Prateleira}"
-                    ItemDisplayBinding="{Binding Nome}"
-                    Title="Prateleira do livro"/>
-            </Border>
-
-            <Border
-                Grid.Column="0"
-                Grid.Row="1"
-                Style="{StaticResource Entry}">
-                <Entry
-                    Text="{Binding ISBN}"
-                    Placeholder="ISBN" />
-            </Border>
-
-            <Border
-                Grid.Column="0"
-                Grid.Row="2"
-                Style="{StaticResource Entry}">
-                <Entry
-                    Text="{Binding Titulo}"
-                    Placeholder="Título do livro" />
-            </Border>
-
-            <Border
-                Grid.Column="0"
-                Grid.Row="3"
-                Style="{StaticResource Entry}">
-                <Entry
-                    Text="{Binding Subtitulo}"
-                    Placeholder="Subtítulo do livro" />
-            </Border>
-
-            <Border
-                Grid.Column="0"
-                Grid.Row="4"
-                Style="{StaticResource Entry}">
-                <Entry
-                    Text="{Binding Autor}"
-                    Placeholder="Autores do livro (separados por vírgula)" />
-            </Border>
-
-            <Border
-                Grid.Column="0"
-                Grid.Row="5"
-                Style="{StaticResource Entry}">
-                <Entry
-                    Text="{Binding Editora}"
-                    Placeholder="Editora do livro" />
-            </Border>
-
-            <Border
-                Grid.Column="0"
-                Grid.Row="6"
-                Style="{StaticResource Entry}">
-                <Entry
-                    Text="{Binding Edicao}"
-                    Placeholder="Edição do livro" />
-            </Border>
-
-            <Border
-                Grid.Column="0"
-                Grid.Row="7"
-                Style="{StaticResource Entry}">
-                <Entry
-                    Text="{Binding AnoPublicacao}"
-                    Keyboard="Numeric"
-                    Placeholder="Ano de publicação do livro"/>
-            </Border>
-
-            <Border
-                Grid.Column="0"
-                Grid.Row="8"
-                Style="{StaticResource Entry}">
-                <Entry
-                    Text="{Binding Idioma}"
-                    Placeholder="Idioma do livro" />
-            </Border>
-
-            <Border
-                Grid.Column="0"
-                Grid.Row="9"
-                Style="{StaticResource Entry}">
-                <Entry
-                    Text="{Binding Paginas}"
-                    Keyboard="Numeric"
-                    Placeholder="Quantidade de páginas do livro" />
-            </Border>
-
-            <Border
-                Grid.Column="0"
-                Grid.Row="10"
-                Style="{StaticResource Entry}">
-                <Entry
-                    Text="{Binding Descricao}"
-                    Placeholder="Descrição do livro" />
-            </Border>
-
-            <HorizontalStackLayout
-                Grid.Column="0"
-                Grid.Row="11"
-                Spacing="5">
-                <CheckBox
-                    IsChecked="{Binding Favorito}"
-                    VerticalOptions="Center"/>
-                <Label
-                    Text="Um dos meus livros favorito?"
-                    HorizontalOptions="StartAndExpand"
-                    VerticalOptions="Center"/>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout
-                Grid.Column="0"
-                Grid.Row="12"
-                Spacing="5">
-                <CheckBox
-                    IsChecked="{Binding Lido}"
-                    VerticalOptions="Center"/>
-                <Label
-                    Text="Já li esse livro?"
-                    HorizontalOptions="StartAndExpand"
-                    VerticalOptions="Center"/>
-            </HorizontalStackLayout>
-
-            <Grid
-                Grid.Column="0"
-                Grid.Row="13"
-                ColumnDefinitions="*,*"
-                RowDefinitions="auto">
-
-                <Button
-                    Grid.Column="0"
-                    Grid.Row="0"
-                    Text="Cancelar"
-                    Command="{Binding CancelCommand}"
-                    Style="{StaticResource LinkButton}"/>
-
-                <Button
-                    Grid.Column="1"
-                    Grid.Row="0"
-                    Text="Salvar"
-                    Command="{Binding SaveCommand}"/>
+                Spacing="15">
                 
-            </Grid>
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Picker
+                        ItemsSource="{Binding Prateleiras}"
+                        SelectedItem="{Binding Prateleira}"
+                        ItemDisplayBinding="{Binding Nome}"
+                        Title="Prateleira do livro"/>
+                </Border>
+
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding ISBN}"
+                        Keyboard="Numeric"
+                        Placeholder="ISBN" />
+                </Border>
+
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding ImagemUrl}"
+                        Placeholder="URL da imagem do livro" />
+                </Border>
+
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding Titulo}"
+                        Placeholder="Título do livro" />
+                </Border>
+
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding Subtitulo}"
+                        Placeholder="Subtítulo do livro" />
+                </Border>
+
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding Autor}"
+                        Placeholder="Autores do livro (separados por vírgula)" />
+                </Border>
+
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding Editora}"
+                        Placeholder="Editora do livro" />
+                </Border>
+
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding Edicao}"
+                        Placeholder="Edição do livro" />
+                </Border>
+
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding AnoPublicacao}"
+                        Keyboard="Numeric"
+                        Placeholder="Ano de publicação do livro"/>
+                </Border>
+
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding Idioma}"
+                        Placeholder="Idioma do livro" />
+                </Border>
+
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding Paginas}"
+                        Keyboard="Numeric"
+                        Placeholder="Quantidade de páginas do livro" />
+                </Border>
+
+                <Border
+                    Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding Descricao}"
+                        Placeholder="Descrição do livro" />
+                </Border>
+
+                <HorizontalStackLayout
+                    Spacing="5">
+                    <CheckBox
+                        IsChecked="{Binding Favorito}"
+                        VerticalOptions="Center"/>
+                    <Label
+                        Text="Um dos meus livros favorito?"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                    Spacing="5">
+                    <CheckBox
+                        IsChecked="{Binding Lido}"
+                        VerticalOptions="Center"/>
+                    <Label
+                        Text="Já li esse livro?"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <Grid
+                    ColumnDefinitions="*,*"
+                    RowDefinitions="auto">
+
+                    <Button
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Text="Cancelar"
+                        Command="{Binding CancelCommand}"
+                        Style="{StaticResource LinkButton}"/>
+
+                    <Button
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="Salvar"
+                        Command="{Binding SaveCommand}"/>
+                
+                </Grid>
+            
+            </VerticalStackLayout>
         </Grid>
     </ScrollView>
 </ContentPage>

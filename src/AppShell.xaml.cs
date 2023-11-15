@@ -15,6 +15,6 @@ public partial class AppShell : Shell
 
     private async void NovoLivro_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync($"//LivroEditPage?id=0");
+        await Current.GoToAsync($"//LivroEditPage?id=0");
     }
 }
