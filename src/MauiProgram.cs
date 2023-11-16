@@ -18,10 +18,15 @@ public static class MauiProgram
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemiBold");
                 fonts.AddFont("Font-Awesome-6-Free-Solid-900.otf", "FontAwesomeSolid");
                 fonts.AddFont("Font-Awesome-6-Free-Regular-400.otf", "FontAwesomeRegular");
-                fonts.AddFont("tabler-icons.ttf", "Tabler");
+                fonts.AddFont("Abel-Regular.ttf", "AbelRegular");
+                fonts.AddFont("Poppins-Bold.ttf", "PoppinsBold");
+                fonts.AddFont("Poppins-Light.ttf", "PoppinsLight");
+                fonts.AddFont("Poppins-Regular.ttf", "PoppinsRegular");
+                fonts.AddFont("Poppins-SemiBold.ttf", "PoppinsSemiBold");
+                fonts.AddFont("Kameron-Bold.ttf", "KameronBold");
             });
 #if DEBUG
         builder.Logging.AddDebug();
@@ -33,6 +38,11 @@ public static class MauiProgram
             h.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToAndroid());
         });
         Microsoft.Maui.Handlers.EditorHandler.Mapper.AppendToMapping("NoUnderline", (h, v) =>
+        {
+            // Remove underline:
+            h.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToAndroid());
+        });
+        Microsoft.Maui.Handlers.SearchBarHandler.Mapper.AppendToMapping("NoUnderline", (h, v) =>
         {
             // Remove underline:
             h.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToAndroid());

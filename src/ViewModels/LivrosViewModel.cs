@@ -1,5 +1,6 @@
 ﻿using Biblioconecta.Data;
 using Biblioconecta.Data.Models;
+using Biblioconecta.Models;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -20,7 +21,7 @@ public class LivrosViewModel : BaseViewModel, IQueryAttributable
     public ICommand FilterCommand { get; }
 
     public ObservableCollection<Livro> Items { get; } = new();
-    public ObservableCollection<Prateleira> Prateleiras { get; } = new();
+    public ObservableCollection<PrateleiraModel> Prateleiras { get; } = new();
     public bool IsRefreshing { get => isRefreshing; set => SetProperty(ref isRefreshing, value); }
     public int PrateleiraId { get => prateleiraId; set => SetProperty(ref prateleiraId, value); }
     public string SearchText { get => searchText; set => SetProperty(ref searchText, value); }
@@ -34,7 +35,7 @@ public class LivrosViewModel : BaseViewModel, IQueryAttributable
         FavoriteCommand = new Command<Livro>(async (value) => await FavoritoAsync(value));
         RefreshCommand = new Command(async () => await GetItemsAsync(SearchText));
         SearchCommand = new Command<string>(async (string value) => await GetItemsAsync(value));
-        FilterCommand = new Command<Prateleira>(async (value) => await SetPrateleira(value));
+        FilterCommand = new Command<PrateleiraModel>(async (value) => await SetPrateleira(value));
     }
 
     public async void ApplyQueryAttributes(IDictionary<string, object> query)
@@ -49,7 +50,7 @@ public class LivrosViewModel : BaseViewModel, IQueryAttributable
         }
     }
 
-    private async Task SetPrateleira(Prateleira value)
+    private async Task SetPrateleira(PrateleiraModel value)
     {
         PrateleiraId = value.Id;
         await GetItemsAsync(SearchText);
@@ -62,9 +63,9 @@ public class LivrosViewModel : BaseViewModel, IQueryAttributable
         Prateleiras.Clear();
         foreach (var item in result)
         {
-            Prateleiras.Add(item);
+            Prateleiras.Add(new() { Id = item.Id, Nome = item.Nome, Selecionado = PrateleiraId == item.Id });
         }
-        Prateleiras.Insert(0, new() { Id = 0, Nome = "Todos" });
+        Prateleiras.Insert(0, new() { Id = 0, Nome = "Todos", Selecionado = PrateleiraId == 0 });
     }
 
     public async Task GetItemsAsync(string searchText)

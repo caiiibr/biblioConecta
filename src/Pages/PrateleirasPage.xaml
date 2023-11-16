@@ -38,13 +38,13 @@
                                 Stroke="{StaticResource Tertiary}"
                                 StrokeShape="RoundRectangle 0,8,8,0"
                                 BackgroundColor="{StaticResource Tertiary}"
-                                HeightRequest="56"
-                                WidthRequest="56">
+                                HeightRequest="57"
+                                WidthRequest="59">
 
                                 <Label
                                     HorizontalOptions="CenterAndExpand"
                                     VerticalOptions="CenterAndExpand"
-                                    FontFamily="OpenSansSemibold"
+                                    FontFamily="PoppinsSemiBold"
                                     FontSize="24"
                                     TextColor="{StaticResource Primary}"
                                     Text="{Binding Iniciais}" />
@@ -55,10 +55,11 @@
                                 Grid.Column="1"
                                 Grid.Row="0">
                                 <Label
-                                    FontFamily="OpenSansSemibold"
-                                    FontSize="16"
+                                    FontFamily="PoppinsSemiBold"
+                                    FontSize="14"
                                     Text="{Binding Nome}" />
                                 <Label 
+                                    FontSize="14"
                                     Text="{Binding Quantidade, StringFormat='{0} livro(s)'}" />
                             </VerticalStackLayout>
 

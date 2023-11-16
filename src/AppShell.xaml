@@ -4,7 +4,21 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:Biblioconecta.Pages"
+    x:Name="this"
+    BindingContext="{x:Reference this}"
     Shell.FlyoutBehavior="Disabled">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBackCommand}">
+            <BackButtonBehavior.IconOverride>
+                <FontImageSource
+                    FontFamily="FontAwesomeSolid"
+                    Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+                    Glyph="{StaticResource fa-arrow-left}"
+                    Size="24" />
+            </BackButtonBehavior.IconOverride>
+        </BackButtonBehavior>
+    </Shell.BackButtonBehavior>
 
     <ShellContent
         Title="Inicio"
@@ -13,10 +27,14 @@
 
     <TabBar
         FlyoutDisplayOptions="AsSingleItem">
-
-        <Tab Title="Patreleiras" FlyoutDisplayOptions="AsSingleItem">
+        
+        <Tab Title="Prateleiras" FlyoutDisplayOptions="AsSingleItem">
             <Tab.Icon>
-                <FontImageSource FontFamily="FontAwesomeRegular" Glyph="{StaticResource fa-chart-bar}" Size="14" />
+                <FontImageSource
+                    FontFamily="FontAwesomeRegular"
+                    Color="{AppThemeBinding Light={StaticResource TextColor}, Dark={StaticResource White}}"
+                    Glyph="{StaticResource fa-chart-bar}"
+                    Size="12" />
             </Tab.Icon>
 
             <ShellContent 
@@ -40,7 +58,11 @@
             ContentTemplate="{DataTemplate pages:LivroEditPage}"
             Route="LivroEditPage" >
             <ShellContent.Icon>
-                <FontImageSource FontFamily="FontAwesomeRegular" Glyph="{StaticResource fa-square-plus}" Size="14" />
+                <FontImageSource
+                    FontFamily="FontAwesomeRegular"
+                    Color="{AppThemeBinding Light={StaticResource TextColor}, Dark={StaticResource White}}"
+                    Glyph="{StaticResource fa-square-plus}"
+                    Size="12" />
             </ShellContent.Icon>
         </ShellContent>
 
@@ -49,7 +71,11 @@
             ContentTemplate="{DataTemplate pages:MinhaContaPage}"
             Route="MinhaContaPage">
             <ShellContent.Icon>
-                <FontImageSource FontFamily="FontAwesomeRegular" Glyph="{StaticResource fa-user}" Size="14" />
+                <FontImageSource
+                    FontFamily="FontAwesomeRegular"
+                    Color="{AppThemeBinding Light={StaticResource TextColor}, Dark={StaticResource White}}"
+                    Glyph="{StaticResource fa-user}"
+                    Size="12" />
             </ShellContent.Icon>
         </ShellContent>
 

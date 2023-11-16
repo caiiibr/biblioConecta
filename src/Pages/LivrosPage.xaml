@@ -3,22 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Biblioconecta.ViewModels"
              xmlns:model="clr-namespace:Biblioconecta.Data.Models"
+             xmlns:models="clr-namespace:Biblioconecta.Models"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Biblioconecta.Pages.LivrosPage"
              x:DataType="vm:LivrosViewModel"
              Title="Meus livros">
+
     <Grid
         ColumnDefinitions="*"
         RowDefinitions="auto,auto,*"
         RowSpacing="20"
         Padding="10">
 
-        <SearchBar
+        <Border
             Grid.Column="0"
-            Grid.Row="0" 
-            SearchCommand="{Binding SearchCommand}"
-            SearchCommandParameter="{Binding SearchText}"
-            Text="{Binding SearchText}"
-            TextChanged="SearchBar_TextChanged"/>
+            Grid.Row="0"
+            Style="{StaticResource Search}">
+
+            <SearchBar
+                SearchCommand="{Binding SearchCommand}"
+                SearchCommandParameter="{Binding SearchText}"
+                Text="{Binding SearchText}"
+                TextChanged="SearchBar_TextChanged"/>
+
+        </Border>
 
         <CollectionView
             Grid.Column="0"
@@ -28,25 +36,40 @@
                 <LinearItemsLayout ItemSpacing="5" Orientation="Horizontal" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Prateleira">
-                    <Border
-                        StrokeShape="RoundRectangle 14"
-                        Padding="12,7">
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer
-                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:LivrosViewModel}}, Path=FilterCommand}"
-                                CommandParameter="{Binding .}" />
-                        </Border.GestureRecognizers>
-                        
-                        <Label
-                            Text="{Binding Nome}">
-                            <Label.Triggers>
-                                <DataTrigger TargetType="Label" Binding="{Binding Id}" Value="{Binding Source={x:RelativeSource AncestorType={x:Type vm:LivrosViewModel}}, Path=PrateleiraId}">
-                                    <Setter Property="FontFamily" Value="OpenSansSemibold" />
-                                </DataTrigger>
-                            </Label.Triggers>
-                        </Label>
-                    </Border>
+                <DataTemplate x:DataType="models:PrateleiraModel">
+                    <Grid
+                        ColumnDefinitions="*"
+                        RowDefinitions="*">
+                        <Border
+                            IsVisible="{Binding Selecionado}"
+                            BackgroundColor="{AppThemeBinding Light=#F9D7C7, Dark={StaticResource Gray600}}"
+                            Style="{StaticResource Pill}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:LivrosViewModel}}, Path=FilterCommand}"
+                                    CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+
+                            <Label
+                                FontSize="14"
+                                Text="{Binding Nome}"
+                                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"/>
+                        </Border>
+
+                        <Border
+                            IsVisible="{Binding NaoSelecionado}"
+                            Style="{StaticResource Pill}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:LivrosViewModel}}, Path=FilterCommand}"
+                                    CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+
+                            <Label
+                                FontSize="14"
+                                Text="{Binding Nome}"/>
+                        </Border>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
@@ -78,7 +101,8 @@
                                 Grid.RowSpan="2"
                                 Aspect="AspectFit"
                                 Source="{Binding ImagemUrl}"
-                                HeightRequest="90">
+                                IsVisible="{Binding PossuiImageUrl}"
+                                WidthRequest="60">
                                 <Image.Shadow>
                                     <Shadow
                                         Brush="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray200}}"
@@ -87,14 +111,14 @@
                                         Opacity="0.25" />
                                 </Image.Shadow>
                             </Image>
-                            
+
                             <Border
                                 Grid.Column="0"
                                 Grid.Row="0"
                                 Grid.RowSpan="2"
                                 BackgroundColor="Transparent"
                                 Stroke="{StaticResource Gray200}"
-                                IsVisible="{Binding SemImageUrl}"
+                                IsVisible="{Binding NaoPossuiImageUrl}"
                                 StrokeShape="RoundRectangle 8"
                                 HeightRequest="90"
                                 WidthRequest="60">
@@ -117,7 +141,6 @@
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
                                     Text="Sem&#10;imagem"/>
-
                             </Border>
 
                             <VerticalStackLayout
@@ -125,7 +148,7 @@
                                 Grid.Row="0"
                                 VerticalOptions="Start">
                                 <Label
-                                    FontFamily="OpenSansSemibold"
+                                    FontFamily="PoppinsSemiBold"
                                     FontSize="16"
                                     Text="{Binding Titulo}" />
                                 <Label 

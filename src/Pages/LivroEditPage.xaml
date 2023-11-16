@@ -5,7 +5,8 @@
              xmlns:model="clr-namespace:Biblioconecta.Data.Models"
              x:Class="Biblioconecta.Pages.LivroEditPage"
              x:DataType="vm:LivroEditViewModel"
-             Title="Novo livro">
+             Title="Cadastro de livro">
+    
     <ScrollView>
         <Grid
             ColumnDefinitions="*"
@@ -16,8 +17,9 @@
             <VerticalStackLayout
                 Grid.Column="0"
                 Grid.Row="0"
-                Spacing="15">
-                
+                Spacing="5">
+
+                <Label Text="Prateleira" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Picker
@@ -27,6 +29,7 @@
                         Title="Prateleira do livro"/>
                 </Border>
 
+                <Label Text="ISBN" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Entry
@@ -35,6 +38,7 @@
                         Placeholder="ISBN" />
                 </Border>
 
+                <Label Text="URL da imagem" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Entry
@@ -42,6 +46,7 @@
                         Placeholder="URL da imagem do livro" />
                 </Border>
 
+                <Label Text="Título" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Entry
@@ -49,6 +54,7 @@
                         Placeholder="Título do livro" />
                 </Border>
 
+                <Label Text="Subtítulo" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Entry
@@ -56,6 +62,7 @@
                         Placeholder="Subtítulo do livro" />
                 </Border>
 
+                <Label Text="Autores" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Entry
@@ -63,6 +70,7 @@
                         Placeholder="Autores do livro (separados por vírgula)" />
                 </Border>
 
+                <Label Text="Editora" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Entry
@@ -70,6 +78,7 @@
                         Placeholder="Editora do livro" />
                 </Border>
 
+                <Label Text="Edição" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Entry
@@ -77,6 +86,7 @@
                         Placeholder="Edição do livro" />
                 </Border>
 
+                <Label Text="Ano de publicação" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Entry
@@ -85,6 +95,7 @@
                         Placeholder="Ano de publicação do livro"/>
                 </Border>
 
+                <Label Text="Idioma" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Entry
@@ -92,14 +103,16 @@
                         Placeholder="Idioma do livro" />
                 </Border>
 
+                <Label Text="Número de páginas" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Entry
                         Text="{Binding Paginas}"
                         Keyboard="Numeric"
-                        Placeholder="Quantidade de páginas do livro" />
+                        Placeholder="Número de páginas do livro" />
                 </Border>
 
+                <Label Text="Descrição do livro" Style="{StaticResource Label}"/>
                 <Border
                     Style="{StaticResource Entry}">
                     <Entry
@@ -113,25 +126,28 @@
                         IsChecked="{Binding Favorito}"
                         VerticalOptions="Center"/>
                     <Label
-                        Text="Um dos meus livros favorito?"
+                        Text="Livro favorito"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"/>
                 </HorizontalStackLayout>
 
                 <HorizontalStackLayout
-                    Spacing="5">
+                    Spacing="5"
+                    Margin="0,0,0,20">
                     <CheckBox
                         IsChecked="{Binding Lido}"
                         VerticalOptions="Center"/>
                     <Label
-                        Text="Já li esse livro?"
+                        Text="Lido"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"/>
                 </HorizontalStackLayout>
 
                 <Grid
                     ColumnDefinitions="*,*"
-                    RowDefinitions="auto">
+                    RowDefinitions="auto"
+                    ColumnSpacing="20"
+                    Margin="0,0,0,20">
 
                     <Button
                         Grid.Column="0"

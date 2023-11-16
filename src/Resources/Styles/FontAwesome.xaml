@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+    <x:String x:Key="fa-arrow-left">&#xf060;</x:String>
     <x:String x:Key="fa-arrow-right-from-bracket">&#xf08b;</x:String>
     <x:String x:Key="fa-barcode">&#xf02a;</x:String>
     <x:String x:Key="fa-border-all">&#xf84c;</x:String>

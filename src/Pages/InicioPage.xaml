@@ -14,31 +14,39 @@
             Grid.Column="0"
             Grid.Row="1"
             Aspect="AspectFit"
-            HeightRequest="214"
+            HeightRequest="180"
             Source="logo_inicial.png" />
 
         <VerticalStackLayout
             Grid.Column="0"
-            Grid.Row="2">
+            Grid.Row="2"
+            Spacing="0"
+            Margin="0,30">
             <Label
                 HorizontalOptions="Center"
-                Text="Bem-vindo" />
+                FontFamily="KameronBold"
+                FontSize="36"
+                Text="Bem-vindo" 
+                TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"/>
             <Label
+                FontSize="16"
                 HorizontalOptions="Center"
-                Text="Organize e domine sua biblioteca!" />
+                Text="Organize e domine sua biblioteca!"
+                TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"/>
         </VerticalStackLayout>
         
         <Button
             Grid.Column="0"
             Grid.Row="3"
-            Text="Criar conta"
-            Clicked="Registrar_Clicked"/>
+            Text="Entrar"
+            Clicked="Entrar_Clicked"/>
         
         <Button
             Grid.Column="0"
             Grid.Row="4"
-            Text="Entrar"
-            Clicked="Entrar_Clicked"/>
+            Text="Criar conta"
+            Style="{StaticResource LinkButton}"
+            Clicked="Registrar_Clicked"/>
 
     </Grid>
 </ContentPage>

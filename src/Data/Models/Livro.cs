@@ -27,6 +27,8 @@ public class Livro
     public bool Favorito { get; set; } = false;
     public bool Lido { get; set; } = false;
     [Ignore]
-    public bool SemImageUrl => string.IsNullOrWhiteSpace(ImagemUrl);
+    public bool PossuiImageUrl => !string.IsNullOrWhiteSpace(ImagemUrl);
+    [Ignore]
+    public bool NaoPossuiImageUrl => string.IsNullOrWhiteSpace(ImagemUrl);
 
 }

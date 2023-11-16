@@ -29,19 +29,23 @@
             <VerticalStackLayout
                 Grid.Column="0"
                 Grid.Row="1"
-                Spacing="20">
+                Spacing="5">
+
+                <Label Text="Nome" Style="{StaticResource Label}"/>
                 <Border Style="{StaticResource Entry}">
                     <Entry
                         x:Name="NomeEntry"
                         Placeholder="Nome completo" />
                 </Border>
 
+                <Label Text="E-mail" Style="{StaticResource Label}"/>
                 <Border Style="{StaticResource Entry}">
                     <Entry
                         x:Name="EmailEntry"
                         Placeholder="email@email.com" />
                 </Border>
 
+                <Label Text="Nova senha" Style="{StaticResource Label}"/>
                 <Border Style="{StaticResource Entry}">
                     <Entry
                         x:Name="PasswordEntry"

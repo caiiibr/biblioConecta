@@ -26,7 +26,7 @@ public class Prateleira
             {
                 inciais += nomes[1].First().ToString();
             }
-            return inciais;
+            return inciais.ToUpper();
         }
     }
 }

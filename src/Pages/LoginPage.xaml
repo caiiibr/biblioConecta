@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Biblioconecta.Pages.LoginPage"
              Title="Entrar no aplicativo">
+    
     <ScrollView>
         <Grid
             ColumnDefinitions="*"
@@ -20,13 +21,16 @@
             <VerticalStackLayout
                 Grid.Column="0"
                 Grid.Row="2"
-                Spacing="20">
+                Spacing="5">
+                
+                <Label Text="E-mail" Style="{StaticResource Label}"/>
                 <Border Style="{StaticResource Entry}">
                     <Entry
                         x:Name="EmailEntry"
                         Placeholder="email@email.com" />
                 </Border>
 
+                <Label Text="Senha" Style="{StaticResource Label}"/>
                 <Border Style="{StaticResource Entry}">
                     <Entry
                         x:Name="SenhaEntry"
@@ -40,13 +44,13 @@
                 Text="Entrar"
                 Clicked="Entrar_Clicked"/>
 
-            <HorizontalStackLayout
+            <!--<HorizontalStackLayout
                 Grid.Column="0"
                 Grid.Row="4"
                 HorizontalOptions="Center">
                 <Label Text="Esqueceu sua senha? " />
                 <Label Text="Clique aqui" />
-            </HorizontalStackLayout>
+            </HorizontalStackLayout>-->
 
         </Grid>
     </ScrollView>
