@@ -17,6 +17,7 @@ public partial class MinhaContaPage : ContentPage
         base.OnAppearing();
         NomeEntry.Text = Settings.Usuario?.Nome;
         EmailEntry.Text = Settings.Usuario?.Email;
+        PasswordEntry.Text = string.Empty;
     }
 
     private async void Desconectar_Clicked(object sender, EventArgs e)
@@ -39,13 +40,15 @@ public partial class MinhaContaPage : ContentPage
             return;
         }
 
-        Settings.Usuario!.Nome = NomeEntry.Text;
-        Settings.Usuario!.Email = EmailEntry.Text;
+        var usuario = await database.GetUsuarioAsync(Settings.Usuario!.Id);
+        usuario!.Nome = NomeEntry.Text;
+        usuario!.Email = EmailEntry.Text;
         if (!string.IsNullOrEmpty(PasswordEntry.Text))
         {
-            Settings.Usuario!.Senha = PasswordEntry.Text;
+            usuario!.Senha = PasswordEntry.Text;
         }
-        await database.SaveUsuarioAsync(Settings.Usuario);
+        Settings.Usuario = usuario;
+        await database.SaveUsuarioAsync(usuario);
         await Shell.Current.GoToAsync("//PrateleirasPage");
     }
 }

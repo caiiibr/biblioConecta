@@ -73,6 +73,12 @@ public class BiblioconectaDatabase
             .FirstOrDefaultAsync();
     }
 
+    public async Task<Usuario?> GetUsuarioAsync(int id)
+    {
+        await Init();
+        return await Connection.Table<Usuario>().Where(e => e.Id == id).FirstOrDefaultAsync();
+    }
+
     public async Task<Usuario?> GetUsuarioAsync(string email)
     {
         await Init();

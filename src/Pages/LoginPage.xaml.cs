@@ -17,19 +17,19 @@ public partial class LoginPage : ContentPage
     {
         if (string.IsNullOrEmpty(EmailEntry.Text))
         {
-            await Shell.Current.DisplayAlert("Algo deu errado...", "O e-mail � obrigat�rio.", "Ok, entendi");
+            await Shell.Current.DisplayAlert("Algo deu errado...", "O e-mail é obrigatório.", "Ok, entendi");
             return;
         }
         if (string.IsNullOrEmpty(SenhaEntry.Text))
         {
-            await Shell.Current.DisplayAlert("Algo deu errado...", "A senha � obrigat�ria.", "Ok, entendi");
+            await Shell.Current.DisplayAlert("Algo deu errado...", "A senha é obrigatória.", "Ok, entendi");
             return;
         }
 
         Usuario? usuario = await database.GetUsuarioAsync(EmailEntry.Text);
         if (usuario == null || usuario.Senha != SenhaEntry.Text)
         {
-            await Shell.Current.DisplayAlert("Algo deu errado...", "O e-mail ou a senha informado � inv�lido.", "Ok, entendi");
+            await Shell.Current.DisplayAlert("Algo deu errado...", "O e-mail ou a senha informado é inválido.", "Ok, entendi");
             return;
         }
 

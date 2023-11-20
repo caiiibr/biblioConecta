@@ -17,27 +17,27 @@ public partial class RegistroPage : ContentPage
     {
         if (string.IsNullOrEmpty(NomeEntry.Text))
         {
-            await Shell.Current.DisplayAlert("Algo deu errado...", "O nome � obrigat�rio.", "Ok, entendi");
+            await Shell.Current.DisplayAlert("Algo deu errado...", "O nome é obrigatório.", "Ok, entendi");
             return;
         }
         if (string.IsNullOrEmpty(EmailEntry.Text))
         {
-            await Shell.Current.DisplayAlert("Algo deu errado...", "O e-mail � obrigat�rio.", "Ok, entendi");
+            await Shell.Current.DisplayAlert("Algo deu errado...", "O e-mail é obrigatório.", "Ok, entendi");
             return;
         }
         if (string.IsNullOrEmpty(SenhaEntry.Text))
         {
-            await Shell.Current.DisplayAlert("Algo deu errado...", "A senha � obrigat�ria.", "Ok, entendi");
+            await Shell.Current.DisplayAlert("Algo deu errado...", "A senha é obrigatória.", "Ok, entendi");
             return;
         }
         if (SenhaEntry.Text != ConfirmacaoSenhaEntry.Text)
         {
-            await Shell.Current.DisplayAlert("Algo deu errado...", "A confirma��o da senha deve ser igual a senha.", "Ok, entendi");
+            await Shell.Current.DisplayAlert("Algo deu errado...", "A confirmação da senha deve ser igual a senha.", "Ok, entendi");
             return;
         }
         if (await database.UsuarioExists(EmailEntry.Text))
         {
-            await Shell.Current.DisplayAlert("Algo deu errado...", "O e-mail informado j� foi usado anteriormente.", "Ok, entendi");
+            await Shell.Current.DisplayAlert("Algo deu errado...", "O e-mail informado já foi usado anteriormente.", "Ok, entendi");
             return;
         }
 
