@@ -34,7 +34,7 @@ public partial class LoginPage : ContentPage
         }
 
         Settings.Usuario = usuario;
-        await Shell.Current.GoToAsync("//PrateleirasPage");
+        await Shell.Current.GoToAsync("//InformacaoPage");
     }
 
 #if DEBUG

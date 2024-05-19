@@ -47,7 +47,7 @@ public partial class RegistroPage : ContentPage
             Email = EmailEntry.Text,
             Senha = SenhaEntry.Text
         };
-        await database.SaveUsuarioAsync(usuario);
+        await database.CreateOrUpdateUsuarioAsync(usuario);
 
         await Shell.Current.DisplayAlert("Deu tudo certo...", "A sua conta foi criada com sucesso!", "Ok, entendi");
         await Shell.Current.GoToAsync("//LoginPage");

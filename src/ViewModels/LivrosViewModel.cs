@@ -103,7 +103,7 @@ public class LivrosViewModel : BaseViewModel, IQueryAttributable
     public async Task FavoritoAsync(Livro value)
     {
         value.Favorito = !value.Favorito;
-        await database.SaveLivroAsync(value);
+        await database.CreateOrUpdateLivroAsync(value);
         await GetItemsAsync(SearchText);
     }
 

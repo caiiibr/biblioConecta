@@ -22,7 +22,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Prateleira">
                         <Grid
-                            ColumnDefinitions="auto,*,auto,auto"
+                            ColumnDefinitions="auto,*,auto,auto,auto"
                             RowDefinitions="auto"
                             ColumnSpacing="15"
                             Padding="10">
@@ -82,6 +82,17 @@
                                 Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:PrateleirasViewModel}}, Path=EditCommand}"
                                 CommandParameter="{Binding .}"
                                 Text="{StaticResource fa-pen-to-square}"
+                                Style="{StaticResource IconButton}">
+                            </Button>
+
+                            <Button 
+                                Grid.Column="4"
+                                Grid.Row="0"
+                                FontFamily="FontAwesomeSolid"
+                                VerticalOptions="Center"
+                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:PrateleirasViewModel}}, Path=ShareCommand}"
+                                CommandParameter="{Binding .}"
+                                Text="{StaticResource fa-share-nodes}"
                                 Style="{StaticResource IconButton}">
                             </Button>
 

@@ -53,7 +53,7 @@
                             <Label
                                 FontSize="14"
                                 Text="{Binding Nome}"
-                                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"/>
+                                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
                         </Border>
 
                         <Border
@@ -96,6 +96,7 @@
                             </Grid.GestureRecognizers>
 
                             <Image
+                                x:Name="LivroImage"
                                 Grid.Column="0"
                                 Grid.Row="0"
                                 Grid.RowSpan="2"

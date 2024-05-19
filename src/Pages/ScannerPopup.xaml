@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+                  xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+                  x:Class="Biblioconecta.Pages.ScannerPopup"
+                  x:Name="this"
+                  BackgroundColor="#000000">
+
+    <Grid
+        x:Name="_grid"
+        BindingContext="{x:Reference this}"
+        ColumnDefinitions="*"
+        RowDefinitions="auto,*,auto">
+
+        <zxing:CameraBarcodeReaderView
+            x:Name="barcodeReader"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            IsDetecting="True" 
+            IsTorchOn="False"
+            BarcodesDetected="barcodeReader_BarcodesDetected"/>
+
+        <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="#AA000000" Padding="24,12">
+
+            <Border
+                BackgroundColor="#ffffff"
+                Padding="14"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 16"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    FontSize="12"
+					HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Posicione o código de barras no centro da tela" />
+            </Border>
+
+        </StackLayout>
+
+        <!-- Close button -->
+        <Grid Grid.Column="0" Grid.Row="2" BackgroundColor="#AA000000" Padding="5" ColumnDefinitions="*,*" RowDefinitions="*">
+            <Button
+                Grid.Column="0"
+                Grid.Row="0"
+                BackgroundColor="{StaticResource White}"
+                Clicked="Manual_Clicked"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                Margin="0,25"
+                Text="Digitar"
+                TextColor="{StaticResource Black}"
+                WidthRequest="120"
+                SemanticProperties.Hint="Clique para informar o código manualmente"/>
+            <Button
+                Grid.Column="1"
+                Grid.Row="0"
+                BackgroundColor="{StaticResource Primary}"
+                Clicked="Close_Clicked"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                Margin="0,25"
+                Text="Fechar"
+                TextColor="{StaticResource White}"
+                WidthRequest="120"
+                SemanticProperties.Hint="Clique para fechar leitura do código de barras"/>
+        </Grid>
+
+        <BoxView
+            Grid.Column="0"
+            Grid.Row="1"
+            Color="Red"
+            BackgroundColor="Red"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Center"
+            HeightRequest="1"/>
+    </Grid>
+
+</mopups:PopupPage>

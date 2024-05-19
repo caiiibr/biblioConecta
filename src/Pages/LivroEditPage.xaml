@@ -5,8 +5,8 @@
              xmlns:model="clr-namespace:Biblioconecta.Data.Models"
              x:Class="Biblioconecta.Pages.LivroEditPage"
              x:DataType="vm:LivroEditViewModel"
-             Title="Cadastro de livro">
-    
+             Title="Cadastro de livros">
+
     <ScrollView>
         <Grid
             ColumnDefinitions="*"
@@ -30,13 +30,31 @@
                 </Border>
 
                 <Label Text="ISBN" Style="{StaticResource Label}"/>
-                <Border
-                    Style="{StaticResource Entry}">
-                    <Entry
-                        Text="{Binding ISBN}"
-                        Keyboard="Numeric"
-                        Placeholder="ISBN" />
-                </Border>
+                <Grid
+                    ColumnDefinitions="*,auto"
+                    RowDefinitions="auto"
+                    ColumnSpacing="5">
+                    <Border
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Style="{StaticResource Entry}">
+                        <Entry
+                            Text="{Binding ISBN}"
+                            Keyboard="Numeric"
+                            Placeholder="ISBN" />
+                    </Border>
+                    <Button
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        FontFamily="FontAwesomeSolid"
+                        FontSize="24"
+                        VerticalOptions="Center"
+                        Command="{Binding SearchCommand}"
+                        TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray600}}"
+                        Text="{StaticResource fa-magnifying-glass}"
+                        Style="{StaticResource IconButton}">
+                    </Button>
+                </Grid>
 
                 <Label Text="URL da imagem" Style="{StaticResource Label}"/>
                 <Border
@@ -161,9 +179,9 @@
                         Grid.Row="0"
                         Text="Salvar"
                         Command="{Binding SaveCommand}"/>
-                
+
                 </Grid>
-            
+
             </VerticalStackLayout>
         </Grid>
     </ScrollView>

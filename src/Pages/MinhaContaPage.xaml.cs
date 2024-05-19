@@ -7,8 +7,8 @@ public partial class MinhaContaPage : ContentPage
     private readonly BiblioconectaDatabase database;
 
     public MinhaContaPage(BiblioconectaDatabase database)
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
         this.database = database;
     }
 
@@ -48,7 +48,7 @@ public partial class MinhaContaPage : ContentPage
             usuario!.Senha = PasswordEntry.Text;
         }
         Settings.Usuario = usuario;
-        await database.SaveUsuarioAsync(usuario);
+        await database.CreateOrUpdateUsuarioAsync(usuario);
         await Shell.Current.GoToAsync("//PrateleirasPage");
     }
 }

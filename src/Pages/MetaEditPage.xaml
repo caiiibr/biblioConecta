@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Biblioconecta.ViewModels"
+             xmlns:model="clr-namespace:Biblioconecta.Data.Models"
+             x:Class="Biblioconecta.Pages.MetaEditPage"
+             x:DataType="vm:MetaEditViewModel"
+             Title="Cadastro de metas">
+
+    <ScrollView>
+        <Grid
+            ColumnDefinitions="*"
+            RowDefinitions="auto,*"
+            RowSpacing="10"
+            Padding="20">
+
+            <Border
+                Grid.Column="0"
+                Grid.Row="0"
+                HorizontalOptions="CenterAndExpand"
+                Margin="10"
+                Stroke="{AppThemeBinding Light=#F9D7C7, Dark={StaticResource Gray900}}"
+                BackgroundColor="{AppThemeBinding Light=#F9D7C7, Dark={StaticResource Gray900}}"
+                StrokeShape="RoundRectangle 10">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray200}}"
+                        Offset="0,10"
+                        Radius="20"
+                        Opacity="0.25" />
+                </Border.Shadow>
+
+                <Grid
+                    ColumnDefinitions="*"
+                    RowDefinitions="auto,auto,auto"
+                    ColumnSpacing="15"
+                    Padding="10">
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        FontFamily="PoppinsSemiBold"
+                        FontSize="16"
+                        Text="{Binding Nome}" />
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontSize="14" Text="Terminar " />
+                                <Span FontSize="14" Text="{Binding QuantidadeLivros}" />
+                                <Span FontSize="14" Text=" livros entre " />
+                                <Span FontSize="14" Text="{Binding DataInicio, StringFormat='{0:dd/MM/yyyy}'}" />
+                                <Span FontSize="14" Text=" e " />
+                                <Span FontSize="14" Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        FontFamily="PoppinsSemiBold"
+                        FontSize="16">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontFamily="PoppinsSemiBold" FontSize="16" Text="{Binding QuantidadeLivrosLidos}" />
+                                <Span FontFamily="PoppinsSemiBold" FontSize="16" Text="/" />
+                                <Span FontFamily="PoppinsSemiBold" FontSize="16" Text="{Binding QuantidadeLivros}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </Border>
+
+            <VerticalStackLayout
+                Grid.Column="0"
+                Grid.Row="1"
+                Spacing="5">
+
+                <Label Text="Título do objetivo" Style="{StaticResource Label}"/>
+                <Border Style="{StaticResource Entry}">
+                    <Entry
+                        Text="{Binding Nome}"
+                        Placeholder="Título do objetivo" />
+                </Border>
+
+                <Label Text="Quantidade de livros" Style="{StaticResource Label}"/>
+                <Border Style="{StaticResource Entry}">
+                    <Entry
+                        Keyboard="Numeric"
+                        Text="{Binding QuantidadeLivros}"
+                        Placeholder="Quantidade de livros" />
+                </Border>
+
+                <Grid
+                    ColumnDefinitions="*,*"
+                    RowDefinitions="auto"
+                    ColumnSpacing="20">
+
+                    <VerticalStackLayout
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Spacing="5">
+
+                        <Label Text="Início" Style="{StaticResource Label}"/>
+                        <Border Style="{StaticResource Entry}">
+                            <DatePicker Date="{Binding DataInicio}" />
+                        </Border>
+
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Spacing="5">
+
+                        <Label Text="Término" Style="{StaticResource Label}"/>
+                        <Border Style="{StaticResource Entry}">
+                            <DatePicker Date="{Binding DataTermino}" />
+                        </Border>
+
+                    </VerticalStackLayout>
+
+                </Grid>
+
+                <Label
+                    FontFamily="PoppinsSemiBold"
+                    FontSize="16"
+                    Text="Livros finalizados"
+                    Margin="0,16,0,0"/>
+
+                <CollectionView
+                    ItemsSource="{Binding Livros}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="3" HorizontalItemSpacing="5" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Livro">
+                            <Grid
+                                ColumnDefinitions="*"
+                                RowDefinitions="auto"
+                                HorizontalOptions="FillAndExpand"
+                                RowSpacing="5"
+                                Padding="10">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:MetaEditViewModel}}, Path=SelectItemCommand}"
+                                        CommandParameter="{Binding .}" />
+                                </Grid.GestureRecognizers>
+
+                                <Image
+                                    x:Name="LivroImage"
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Aspect="AspectFit"
+                                    Source="{Binding ImagemUrl}"
+                                    IsVisible="{Binding PossuiImageUrl}"
+                                    MinimumHeightRequest="140">
+                                    <Image.Shadow>
+                                        <Shadow
+                                            Brush="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray200}}"
+                                            Offset="5,10"
+                                            Radius="20"
+                                            Opacity="0.25" />
+                                    </Image.Shadow>
+                                </Image>
+
+                                <Border
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    BackgroundColor="Transparent"
+                                    Stroke="{StaticResource Gray200}"
+                                    IsVisible="{Binding NaoPossuiImageUrl}"
+                                    StrokeShape="RoundRectangle 8"
+                                    MinimumHeightRequest="140">
+                                    <Border.Triggers>
+                                        <DataTrigger TargetType="Border" Binding="{Binding ImagemUrl}" Value="">
+                                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray600}}" />
+                                        </DataTrigger>
+                                    </Border.Triggers>
+                                    <Border.Shadow>
+                                        <Shadow
+                                            Brush="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray200}}"
+                                            Offset="5,10"
+                                            Radius="20"
+                                            Opacity="0.25" />
+                                    </Border.Shadow>
+
+                                    <Label
+                                        FontSize="12"
+                                        HorizontalTextAlignment="Center"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        Text="{Binding Titulo}">
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding Id}" Value="0">
+                                                <Setter Property="FontFamily" Value="FontAwesomeSolid" />
+                                                <Setter Property="FontSize" Value="18" />
+                                                <Setter Property="Text" Value="{StaticResource fa-plus}" />
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
+                                </Border>
+
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+
+                <Grid
+                    ColumnDefinitions="*,*"
+                    RowDefinitions="auto"
+                    ColumnSpacing="20"
+                    Margin="0,0,0,20">
+
+                    <Button
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Text="Cancelar"
+                        Command="{Binding CancelCommand}"
+                        Style="{StaticResource LinkButton}"/>
+
+                    <Button
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="Salvar"
+                        Command="{Binding SaveCommand}"/>
+
+                </Grid>
+
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

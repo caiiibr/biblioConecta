@@ -1,11 +1,12 @@
-﻿namespace Biblioconecta;
-
-public partial class App : Application
+﻿namespace Biblioconecta
 {
-    public App()
+    public partial class App : Application
     {
-        InitializeComponent();
+        public App()
+        {
+            InitializeComponent();
 
-        MainPage = new AppShell();
+            MainPage = new AppShell();
+        }
     }
 }

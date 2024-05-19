@@ -3,31 +3,40 @@
     x:Class="Biblioconecta.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Biblioconecta"
     xmlns:pages="clr-namespace:Biblioconecta.Pages"
-    x:Name="this"
+    Shell.FlyoutBehavior="Disabled"
     BindingContext="{x:Reference this}"
-    Shell.FlyoutBehavior="Disabled">
-
-    <Shell.BackButtonBehavior>
-        <BackButtonBehavior Command="{Binding GoBackCommand}">
-            <BackButtonBehavior.IconOverride>
-                <FontImageSource
-                    FontFamily="FontAwesomeSolid"
-                    Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
-                    Glyph="{StaticResource fa-arrow-left}"
-                    Size="24" />
-            </BackButtonBehavior.IconOverride>
-        </BackButtonBehavior>
-    </Shell.BackButtonBehavior>
+    x:Name="this">
 
     <ShellContent
         Title="Inicio"
         ContentTemplate="{DataTemplate pages:InicioPage}"
         Route="InicioPage"/>
 
+    <ShellContent
+        Title=""
+        ContentTemplate="{DataTemplate pages:InformacaoPage}"
+        Route="InformacaoPage"/>
+
+    <ShellContent
+        Title=""
+        ContentTemplate="{DataTemplate pages:TutorialPage}"
+        Route="TutorialPage"/>
+
+    <ShellContent
+        Title=""
+        ContentTemplate="{DataTemplate pages:LivroEditPage}"
+        Route="LivroEditPage"/>
+
+    <ShellContent
+        Title=""
+        ContentTemplate="{DataTemplate pages:MetaEditPage}"
+        Route="MetaEditPage"/>
+
     <TabBar
         FlyoutDisplayOptions="AsSingleItem">
-        
+
         <Tab Title="Prateleiras" FlyoutDisplayOptions="AsSingleItem">
             <Tab.Icon>
                 <FontImageSource
@@ -55,13 +64,39 @@
 
         <ShellContent
             Title="Novo livro"
-            ContentTemplate="{DataTemplate pages:LivroEditPage}"
-            Route="LivroEditPage" >
+            ContentTemplate="{DataTemplate pages:RedirectToNewPage}"
+            Route="RedirectToNewPage" >
             <ShellContent.Icon>
                 <FontImageSource
                     FontFamily="FontAwesomeRegular"
                     Color="{AppThemeBinding Light={StaticResource TextColor}, Dark={StaticResource White}}"
                     Glyph="{StaticResource fa-square-plus}"
+                    Size="12" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent
+            Title="ISBN"
+            ContentTemplate="{DataTemplate pages:RedirectToScannerPage}"
+            Route="RedirectToScannerPage" >
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="FontAwesomeSolid"
+                    Color="{AppThemeBinding Light={StaticResource TextColor}, Dark={StaticResource White}}"
+                    Glyph="{StaticResource fa-barcode}"
+                    Size="12" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent 
+            Title="Metas"
+            ContentTemplate="{DataTemplate pages:MetasPage}"
+            Route="MetasPage">
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="FontAwesomeSolid"
+                    Color="{AppThemeBinding Light={StaticResource TextColor}, Dark={StaticResource White}}"
+                    Glyph="{StaticResource fa-bullseye}"
                     Size="12" />
             </ShellContent.Icon>
         </ShellContent>

@@ -1,12 +1,18 @@
 ﻿using Biblioconecta.Data;
 using Biblioconecta.Data.Models;
+using Biblioconecta.Pages;
+using Biblioconecta.Services;
+using Mopups.Services;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Windows.Input;
+using ZXing.Net.Maui;
 
 namespace Biblioconecta.ViewModels;
 
 public class LivroEditViewModel : BaseViewModel, IQueryAttributable
 {
+    private readonly GoogleBooksService booksService;
     private readonly BiblioconectaDatabase database;
     private int id;
     private int prateleiraId;
@@ -42,13 +48,18 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
     public string ImagemUrl { get => imagemUrl; set => SetProperty(ref imagemUrl, value); }
     public Prateleira? Prateleira { get => prateleira; set => SetProperty(ref prateleira, value); }
 
+    public ICommand SearchCommand { get; }
     public ICommand SaveCommand { get; }
     public ICommand CancelCommand { get; }
     public ObservableCollection<Prateleira> Prateleiras { get; }
 
-    public LivroEditViewModel(BiblioconectaDatabase database)
+    public LivroEditViewModel(
+        GoogleBooksService booksService,
+        BiblioconectaDatabase database)
     {
+        this.booksService = booksService;
         this.database = database;
+        SearchCommand = new Command(async () => await SearchAsync());
         CancelCommand = new Command(async () => await CancelAsync());
         SaveCommand = new Command(async () => await SaveAsync());
         Prateleiras = new();
@@ -84,6 +95,16 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
                 }
             }
         }
+        if (query.TryGetValue("openCamera", out var openCamera))
+        {
+            if (openCamera != null)
+            {
+                if (Convert.ToBoolean(openCamera))
+                {
+                    await SearchAsync();
+                }
+            }
+        }
     }
 
     public async Task Reset()
@@ -110,6 +131,49 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
         Favorito = false;
         Lido = false;
         ImagemUrl = string.Empty;
+    }
+
+    public async Task SearchAsync()
+    {
+        if (string.IsNullOrEmpty(ISBN))
+        {
+            // abrir camera e escanear código de barras
+            var scanner = new ScannerPopup();
+            await MopupService.Instance.PushAsync(scanner);
+            BarcodeResult? result = await scanner.WaitAsync();
+            if (result != null)
+            {
+                ISBN = result.Value;
+            }
+        }
+        if (!string.IsNullOrEmpty(ISBN))
+        {
+            var book = await booksService.GetAsync(ISBN);
+            if (book != null)
+            {
+                Titulo = book.VolumeInfo.Title ?? "";
+                Subtitulo = book.VolumeInfo.Subtitle ?? "";
+                Autor = string.Join(", ", book.VolumeInfo.Authors);
+                Editora = book.VolumeInfo.Publisher ?? "";
+                Edicao = book.VolumeInfo.ContentVersion ?? "";
+                AnoPublicacao = (book.VolumeInfo.PublishedDate ?? DateTime.Today).Year;
+                Paginas = book.VolumeInfo.PageCount ?? 0;
+                Descricao = book.VolumeInfo.Description ?? "";
+                ImagemUrl = book.VolumeInfo.ImageLinks.Thumbnail
+                    ?? book.VolumeInfo.ImageLinks.SmallThumbnail
+                    ?? "";
+
+                if (!string.IsNullOrEmpty(book.VolumeInfo.Language))
+                {
+                    CultureInfo cultureInfo = new(book.VolumeInfo.Language);
+                    Idioma = cultureInfo.NativeName;
+                }
+            }
+            else
+            {
+                await Shell.Current.DisplayAlert("Algo deu errado...", "Não encontramos nenhum livro com esse código de ISBN.", "Ok, entendi");
+            }
+        }
     }
 
     public async Task CancelAsync()
@@ -157,7 +221,7 @@ public class LivroEditViewModel : BaseViewModel, IQueryAttributable
             Lido = Lido,
             ImagemUrl = ImagemUrl
         };
-        await database.SaveLivroAsync(value);
+        await database.CreateOrUpdateLivroAsync(value);
         await Reset();
         await Shell.Current.GoToAsync("//LivrosPage");
     }

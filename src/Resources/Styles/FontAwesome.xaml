@@ -8,10 +8,14 @@
     <x:String x:Key="fa-arrow-right-from-bracket">&#xf08b;</x:String>
     <x:String x:Key="fa-barcode">&#xf02a;</x:String>
     <x:String x:Key="fa-border-all">&#xf84c;</x:String>
+    <x:String x:Key="fa-bullseye">&#xf140;</x:String>
+    <x:String x:Key="fa-camera">&#xf030;</x:String>
     <x:String x:Key="fa-chart-bar">&#xf080;</x:String>
     <x:String x:Key="fa-heart">&#xf004;</x:String>
+    <x:String x:Key="fa-magnifying-glass">&#xf002;</x:String>
     <x:String x:Key="fa-pen-to-square">&#xf044;</x:String>
     <x:String x:Key="fa-plus">&#x2b;</x:String>
+    <x:String x:Key="fa-share-nodes">&#xf1e0;</x:String>
     <x:String x:Key="fa-sliders">&#xf1de;</x:String>
     <x:String x:Key="fa-square-plus">&#xf0fe;</x:String>
     <x:String x:Key="fa-trash-can">&#xf2ed;</x:String>

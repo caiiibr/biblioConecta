@@ -1,25 +1,20 @@
 ﻿using Biblioconecta.Pages;
 using System.Windows.Input;
 
-namespace Biblioconecta;
-
-public partial class AppShell : Shell
+namespace Biblioconecta
 {
-    ICommand GoBackCommand { get; }
-
-    public AppShell()
+    public partial class AppShell : Shell
     {
-        InitializeComponent();
+        ICommand GoBackCommand { get; }
 
-        GoBackCommand = new Command(async () => await Current.GoToAsync(".."));
+        public AppShell()
+        {
+            InitializeComponent();
 
-        Routing.RegisterRoute("//LoginPage", typeof(LoginPage));
-        Routing.RegisterRoute("//RegistroPage", typeof(RegistroPage));
-        Routing.RegisterRoute("//LivroEditPage", typeof(LivroEditPage));
-    }
+            GoBackCommand = new Command(async () => await Current.GoToAsync(".."));
 
-    private async void NovoLivro_Clicked(object sender, EventArgs e)
-    {
-        await Current.GoToAsync($"//LivroEditPage?id=0");
+            Routing.RegisterRoute("//LoginPage", typeof(LoginPage));
+            Routing.RegisterRoute("//RegistroPage", typeof(RegistroPage));
+        }
     }
 }

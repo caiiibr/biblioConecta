@@ -58,7 +58,7 @@ public class FavoritosViewModel : BaseViewModel
     public async Task GetItemsAsync(string searchText)
     {
         IsRefreshing = true;
-        
+
         await GetPrateleiras();
 
         Items.Clear();
@@ -90,7 +90,7 @@ public class FavoritosViewModel : BaseViewModel
     public async Task FavoritoAsync(Livro value)
     {
         value.Favorito = !value.Favorito;
-        await database.SaveLivroAsync(value);
+        await database.CreateOrUpdateLivroAsync(value);
         await GetItemsAsync(SearchText);
     }
 

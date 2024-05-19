@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Biblioconecta.Pages.InformacaoPage"
+             BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
+             Title="">
+
+    <ScrollView>
+        <Grid
+            ColumnDefinitions="*"
+            RowDefinitions="60,*,auto"
+            Padding="28"
+            RowSpacing="20">
+
+            <VerticalStackLayout
+                Grid.Column="0"
+                Grid.Row="1">
+
+                <Label
+                    TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+                    FontFamily="PoppinsSemiBold"
+                    FontSize="32"
+                    Text="Olá,"
+                    Padding="0,0,0,40"/>
+
+                <Label
+                    TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                    FontFamily="AbelRegular"
+                    LineHeight="1.5"
+                    HorizontalTextAlignment="Center"
+                    Text="Entendemos que a confusão possa surgir, então queremos esclarecer que nosso aplicativo não foi projetado para a leitura de ebooks.&#10;Na verdade, estamos aqui para ajudá-lo(a) a organizar sua coleção de livros de forma prática e eficiente.&#10;Com nossa ferramenta, você poderá catalogar seus livros, definir metas de leitura e muito mais.">
+                </Label>
+
+            </VerticalStackLayout>
+
+            <Button
+                Grid.Column="0"
+                Grid.Row="2"
+                Text="Próximo"
+                Clicked="Entrar_Clicked"
+                Style="{StaticResource LinkButton}"/>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
