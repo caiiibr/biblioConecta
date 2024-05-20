@@ -19,7 +19,7 @@ O aplicativo permite criar “estantes” para que livros possam ser agrupados d
 ## ⚙️ <a id="nome1">Instalação</a>
 
 Existem duas formas de instalação do aplicativo:
-1)	Instalação e execução via Android por meio do <a href="https://github.com/caiiibr/biblioConecta/blob/main/dist/com.biblioconecta.apk">arquivo.apk</a>
+1)	Instalação e execução via Android por meio do <a href="https://github.com/caiiibr/biblioConecta/blob/ecf2fa3f3e33a2f19451fb5979b92b1b5a09a118/dist/com.biblioconecta.apk">arquivo.apk</a>
 - Realizar o download do arquivo;
 - Habilitar permissão para instalar aplicativos desconhecidos no celular;
 
@@ -33,9 +33,11 @@ Existem duas formas de instalação do aplicativo:
 
 - [x] Cadastro Usuário
 - [x] Login
-- [x] Cadastro de Prateleiras
 - [x] Cadastro de Livros
-- [x] Favoritos
+- [x] Livros Favoritos e Livros Lidos
+- [x] Cadastro de Prateleiras
+- [x] Compartilhamento de Prateleiras
+- [x] Metas de Leitura
 - [x] Informações do Usuário
 
 ## 📰 <a id="nome3">Layout</a>
