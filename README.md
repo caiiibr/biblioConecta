@@ -33,9 +33,9 @@ Existem duas formas de instalação do aplicativo:
 
 - [x] Cadastro Usuário
 - [x] Login
-- [x] Cadastro de Livros
-- [x] Livros Favoritos e Livros Lidos
 - [x] Cadastro de Prateleiras
+- [x] Cadastro de Livros
+- [x] Livros Favoritos
 - [x] Compartilhamento de Prateleiras
 - [x] Metas de Leitura
 - [x] Informações do Usuário
@@ -43,17 +43,21 @@ Existem duas formas de instalação do aplicativo:
 ## 📰 <a id="nome3">Layout</a>
 
 ### Tela de Início
+
 ![tela de cadastro](./assets/1.jpg)
 
 ### Cadastro de Usuário
+
 O cadastro do usuário é feito de forma simples, sendo necessário apenas o nome, e-mail e a criação de uma senha.
 
 ![cadastro usuario](./assets/2.jpg)
 
 ### Login
+
 ![login](./assets/3.jpg)
 
 ### Mensagem Inicial
+
 ![mensagem inicial](./assets/4.jpg) ![mensagem inicial](./assets/5.jpg)
 
 ![mensagem inicial](./assets/6.jpg) ![mensagem inicial](./assets/7.jpg)
@@ -72,11 +76,13 @@ O cadastro do usuário é feito de forma simples, sendo necessário apenas o nom
 
 Na aba "Prateleiras" ao selecionar o ícone "+" uma janela irá se abrir para nomear a prateleira.
 
-![cadastro prateleira](./assets/cadastroprateleira.jpg)
+![cadastro prateleira](./assets/9.jpg)
+
+![cadastro prateleira](./assets/901.jpg)
 
 ### Cadastro Livros
 
-Na aba "Livros", ao selecionar o ícone "+" para adicionar um livro em sua prateleira, uma janela para preencher as informações do livro irá abrir. A imagem do livro deve ser inserida por meio de um URL da imagem. Há a possibilidade de favoritar o livro e marcá-lo como lido. Ao finalizar o cadastro deve-se salvar as informações para que o livro seja devidamente cadastrado na prateleira.
+Na aba "Livros", inicia-se com a seleção da prateleira na qual se deseja adicionar um livro. Ao selecionar o ícone "+" para adicionar um livro em sua prateleira, o livro deve ser cadastrado com o número do ISBN que pode ser preenchido manualmente ou clicando na lupa que utilizará a câmera do celular para identificar ler o código de barras e identificar o ISBN.
 
 ![cadastro livro 1](./assets/cadastro%20livro%201.jpg)
 
@@ -86,16 +92,14 @@ Na aba "Livros", ao selecionar o ícone "+" para adicionar um livro em sua prate
 
 ![cadastro livro 4](./assets/cadastro%20livro%204.jpg)
 
+### Favoritos e Lidos
+Ao final do cadastro do livro há a opção de favoritar o livro e informar se o livro já foi lido. Pode-se também favoritar o livro após o cadastro clicando no ícone de coração.
 
 
-Os dados utilizados neste exemplo foram:
-- Categoria Auto -ajuda
-- Titulo do livro:  Anti-frágil - Coisas que se beneficiam com o caos 
-- Autor : Nassim Nicholas Taleb
-- ISBN: 978-8547001087
-- URL imagem: https://res.cloudinary.com/ddrauz5cb/image/upload/v1699987823/livros%20_cloudinary/auto-ajuda/anti-fragil_cy928w.jpg
+### Compartilhando Prateleiras
 
 
+### Criando Metas
 
 
 
