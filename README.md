@@ -10,8 +10,8 @@ O aplicativo permite criar “estantes” para que livros possam ser agrupados d
 <a name="nome"></a> 
 
 - [Instalação](#nome1)
+- [Layout do Aplicativo](#nome3)
 - [Funcionalidades do Projeto](#nome2)
-- [Layout](#nome3)
 - [Demonstração](#nome4)
 - [Próximos Passos](#nome5)
 - [Autoras](#nome6)
@@ -29,31 +29,11 @@ Existem duas formas de instalação do aplicativo:
 - Depois de concluída a instalação abrir o Visual Studio e ir na opção “clonar repositório” e informar o endereço do repositório git;
 - Depois de clonado o projeto, mudar a forma de execução na barra de tarefas do Visual Studio para ‘Android’ ou para o nome de alguma máquina virtual do Android e executar posteriormente.
 
-## 📲 <a id="nome2">Funcionalidades do Projeto</a>
 
-- [x] Cadastro Usuário
-- [x] Login
-- [x] Cadastro de Prateleiras
-- [x] Cadastro de Livros
-- [x] Livros Favoritos
-- [x] Compartilhamento de Prateleiras
-- [x] Metas de Leitura
-- [x] Informações do Usuário
-
-## 📰 <a id="nome3">Layout</a>
-
+## 📰 <a id="nome3">Layout do aplicativo</a>
 ### Tela de Início
 
 ![tela de cadastro](./assets/1.jpg)
-
-### Cadastro de Usuário
-O cadastro do usuário é feito de forma simples, sendo necessário apenas o nome, e-mail e a criação de uma senha.
-
-![cadastro usuario](./assets/2.jpg)
-
-### Login
-
-![login](./assets/3.jpg)
 
 ### Mensagem Inicial
 Ao entrar no aplicativo um breve tutorial de uso é fornecido ao usuário.
@@ -69,9 +49,25 @@ O layout inicial mostra uma de forma prática as diferentes formas de agrupament
 
 ![layout inicial](./assets/9.jpg)
 
-## 🕹️ <a id="nome4">Demonstração</a>
+## 📲 <a id="nome2">Funcionalidades do Projeto</a>
 
-[Vídeo Demonstrativo](https://youtu.be/hsT9QpYC3Qk?si=xe38TLcKPS4ohVqh)
+- [x] Cadastro Usuário
+- [x] Login
+- [x] Cadastro de Prateleiras
+- [x] Cadastro de Livros
+- [x] Livros Favoritos
+- [x] Compartilhamento de Prateleiras
+- [x] Metas de Leitura
+- [x] Informações do Usuário
+
+### Cadastro de Usuário
+O cadastro do usuário é feito de forma simples, sendo necessário apenas o nome, e-mail e a criação de uma senha.
+
+![cadastro usuario](./assets/2.jpg)
+
+### Login
+
+![login](./assets/3.jpg)
 
 ### Cadastro de Prateleiras
 Na aba "Prateleiras" ao selecionar o ícone "+" uma janela irá se abrir para nomear a prateleira.
@@ -84,7 +80,6 @@ Na aba "Livros", inicia-se com a seleção da prateleira na qual se deseja adici
 ![cadastro livro 4](./assets/11.jpg)  ![cadastro livro 2](./assets/101.png)
 
 ![cadastro livro 3](./assets/102.png)
-
 
 ### Favoritos e Lidos
 Ao final do cadastro do livro há a opção de favoritar o livro e informar se o livro já foi lido. Pode-se também favoritar o livro após o cadastro clicando no ícone de coração.
@@ -106,11 +101,19 @@ Os dados de cadastro do usuário ficam visíveis na aba "Minha Conta", permitind
 
 ![compartilhando](./assets/17.png)
 
+
+## 🕹️ <a id="nome4">Demonstração</a>
+
+[Vídeo Demonstrativo](https://youtu.be/hsT9QpYC3Qk?si=xe38TLcKPS4ohVqh)
+
+
+
 ## 🛠️ <a id="nome5">Próximos Passos</a>
 
 - [ ] Adicionar filtros avançados.
 - [ ] Otimizar seleção de prateleiras.
 - [ ] Adicionar capas de livros por meio de foto tirada pelo celular ou imagens da galeria.
+
 
 ## 👩‍💻 <a id="nome6">Autoras</a>
 
