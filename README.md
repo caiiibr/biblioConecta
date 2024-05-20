@@ -95,7 +95,7 @@ Os dados utilizados neste exemplo foram:
 
 - [ ] Adicionar filtros avançados.
 - [ ] Otimizar seleção de prateleiras.
-- [ ] Adicionar capas de livros por meio de foto ou imagens da galeria do celular.
+- [ ] Adicionar capas de livros por meio de foto tirada pelo celular ou imagens da galeria.
 
 ## 👩‍💻 <a id="nome6">Autoras</a>
 
