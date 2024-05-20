@@ -90,12 +90,15 @@ Na aba "Livros", inicia-se com a seleção da prateleira na qual se deseja adici
 
 ![cadastro livro 3](./assets/102.png)
 
+![cadastro livro 4](./assets/11.jpg)
 
 ### Favoritos e Lidos
 
 Ao final do cadastro do livro há a opção de favoritar o livro e informar se o livro já foi lido. Pode-se também favoritar o livro após o cadastro clicando no ícone de coração.
 
 ![favoritando](./assets/103.png)
+
+![cadastro livro 4](./assets/12.jpg)
 
 ### Compartilhando Prateleiras
 
@@ -107,7 +110,9 @@ Ao final do cadastro do livro há a opção de favoritar o livro e informar se o
 
 ![compartilhando](./assets/13.jpg) ![compartilhando](./assets/14.jpg)
 
+### Minha Conta
 
+![compartilhando](./assets/17.png)
 
 ## 🛠️ <a id="nome5">Próximos Passos</a>
 
