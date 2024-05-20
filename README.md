@@ -84,8 +84,6 @@ Na aba "Prateleiras" ao selecionar o ícone "+" uma janela irá se abrir para no
 
 Na aba "Livros", inicia-se com a seleção da prateleira na qual se deseja adicionar um livro. Ao selecionar o ícone "+" para adicionar um livro em sua prateleira, o livro deve ser cadastrado com o número do ISBN que pode ser preenchido manualmente ou clicando na lupa que utilizará a câmera do celular para identificar ler o código de barras e identificar o ISBN.
 
-![cadastro livro 1](./assets/10.jpg)
-
 ![cadastro livro 2](./assets/101.png)
 
 ![cadastro livro 3](./assets/102.png)
