@@ -1,6 +1,6 @@
 # Projeto  BiblioConecta
 
-![LOGO3](./assets/LOGO3.jpg)
+![Capa Biblioconecta](./assets/biblioconecta%20capa.png)
 
 O BiblioConecta é um aplicativo criado para que o usuário consiga de forma prática e intuitiva organizar e gerenciar livros. 
 
