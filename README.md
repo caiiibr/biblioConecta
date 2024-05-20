@@ -58,9 +58,9 @@ O cadastro do usuário é feito de forma simples, sendo necessário apenas o nom
 ### Mensagem Inicial
 Ao entrar no aplicativo um breve tutorial de uso é fornecido ao usuário.
 
-![mensagem inicial](./assets/4.jpg) ![mensagem inicial](./assets/5.jpg)
+![mensagem inicial](./assets/4.jpg)  ![mensagem inicial](./assets/5.jpg)
 
-![mensagem inicial](./assets/6.jpg) ![mensagem inicial](./assets/7.jpg)
+![mensagem inicial](./assets/6.jpg)  ![mensagem inicial](./assets/7.jpg)
 
 ![mensagem inicial](./assets/8.jpg)
 
@@ -81,7 +81,7 @@ Na aba "Prateleiras" ao selecionar o ícone "+" uma janela irá se abrir para no
 ### Cadastro Livros
 Na aba "Livros", inicia-se com a seleção da prateleira na qual se deseja adicionar um livro. Ao selecionar o ícone "+" para adicionar um livro em sua prateleira, o livro deve ser cadastrado com o número do ISBN que pode ser preenchido manualmente ou clicando na lupa que utilizará a câmera do celular para ler o código de barras e identificar o ISBN.
 
-![cadastro livro 4](./assets/11.jpg) ![cadastro livro 2](./assets/101.png)
+![cadastro livro 4](./assets/11.jpg)  ![cadastro livro 2](./assets/101.png)
 
 ![cadastro livro 3](./assets/102.png)
 
@@ -89,17 +89,20 @@ Na aba "Livros", inicia-se com a seleção da prateleira na qual se deseja adici
 ### Favoritos e Lidos
 Ao final do cadastro do livro há a opção de favoritar o livro e informar se o livro já foi lido. Pode-se também favoritar o livro após o cadastro clicando no ícone de coração.
 
-![favoritando](./assets/103.png) ![cadastro livro 4](./assets/12.jpg)
+![favoritando](./assets/103.png)  ![cadastro livro 4](./assets/12.jpg)
 
 ### Compartilhando Prateleiras
+Na aba "Estantes", as prateleiras criadas podem ser compartilhadas ao ser selecionado o ícone de compartilhamento que aparece em cada estante criada pelo usuário. As possíveis formas de compartilhamento aparecem para o usuário. Ao compartilhar uma prateleira, uma mensagem automática é criada, disponibilizando a referência bibliográfica de todos os livros cadastrados na estante.
 
-![compartilhando](./assets/9.jpg) ![compartilhando](./assets/15.png)
+![compartilhando](./assets/9.jpg)  ![compartilhando](./assets/15.png)
 
 ### Criando Metas
+Caso o usuário tenha interesse em criar metas de leitura, o aplicativo possibilita criar metas com prazo de leitura e a quantidade de livros desejada. Ao finalizar a leitura de um livro, o usuário consegue contabilizá-lo.
 
-![compartilhando](./assets/13.jpg) ![compartilhando](./assets/14.jpg)
+![compartilhando](./assets/13.jpg)  ![compartilhando](./assets/14.jpg)
 
 ### Minha Conta
+Os dados de cadastro do usuário ficam visíveis na aba "Minha Conta", permitindo a alteração de senha, caso seja necessário.
 
 ![compartilhando](./assets/17.png)
 
