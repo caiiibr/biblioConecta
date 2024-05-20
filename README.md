@@ -4,7 +4,7 @@
 
 O BiblioConecta é um aplicativo criado para que o usuário consiga de forma prática e intuitiva organizar e gerenciar livros. 
 
-O aplicativo permite criar “estantes” para que livros possam ser agrupados de acordo as necessidades do usuário. Os livros são cadastrados de forma manual, incluindo título, autor, editora, ISBN e capa. O BiblioConecta também permite adicionar uma descrição, favoritar e classificar o livro como lido.
+O aplicativo permite criar “estantes” para que livros possam ser agrupados de acordo as necessidades do usuário. Os livros são cadastrados pelo número ISBN ou pela leitua do código de barras feita pela câmera do celuar. O BiblioConecta também permite adicionar uma descrição, favoritar e classificar o livro como lido, além de permitir o compartilhamento das estantes criadas e adicionar metas de leitura.
 
 ## Índice
 <a name="nome"></a> 
