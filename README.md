@@ -76,16 +76,12 @@ O layout inicial mostra uma de forma prática as diferentes formas de agrupament
 ### Cadastro de Prateleiras
 Na aba "Prateleiras" ao selecionar o ícone "+" uma janela irá se abrir para nomear a prateleira.
 
-![cadastro prateleira](./assets/9.jpg)
-
-![cadastro prateleira](./assets/901.png)
+![cadastro prateleira](./assets/9.jpg) ![cadastro prateleira](./assets/901.png)
 
 ### Cadastro Livros
 Na aba "Livros", inicia-se com a seleção da prateleira na qual se deseja adicionar um livro. Ao selecionar o ícone "+" para adicionar um livro em sua prateleira, o livro deve ser cadastrado com o número do ISBN que pode ser preenchido manualmente ou clicando na lupa que utilizará a câmera do celular para ler o código de barras e identificar o ISBN.
 
-![cadastro livro 4](./assets/11.jpg)
-
-![cadastro livro 2](./assets/101.png)
+![cadastro livro 4](./assets/11.jpg) ![cadastro livro 2](./assets/101.png)
 
 ![cadastro livro 3](./assets/102.png)
 
@@ -93,15 +89,11 @@ Na aba "Livros", inicia-se com a seleção da prateleira na qual se deseja adici
 ### Favoritos e Lidos
 Ao final do cadastro do livro há a opção de favoritar o livro e informar se o livro já foi lido. Pode-se também favoritar o livro após o cadastro clicando no ícone de coração.
 
-![favoritando](./assets/103.png)
-
-![cadastro livro 4](./assets/12.jpg)
+![favoritando](./assets/103.png) ![cadastro livro 4](./assets/12.jpg)
 
 ### Compartilhando Prateleiras
 
-![compartilhando](./assets/9.jpg)
-
-![compartilhando](./assets/15.png)
+![compartilhando](./assets/9.jpg) ![compartilhando](./assets/15.png)
 
 ### Criando Metas
 
