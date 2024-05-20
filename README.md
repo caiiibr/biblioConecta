@@ -93,9 +93,9 @@ Os dados utilizados neste exemplo foram:
 
 ## 🛠️ <a id="nome5">Próximos Passos</a>
 
-- [ ] Adicionar biblioteca para que cadastro não precise ser feito de forma manual.
-- [ ] Scanner para facilitar identificação de livros e cadastro.
-- [ ] Disponibilizar para sistema iOS.
+- [ ] Adicionar filtros avançados.
+- [ ] Otimizar seleção de prateleiras.
+- [ ] Adicionar capas de livros por meio de foto ou imagens da galeria do celular.
 
 ## 👩‍💻 <a id="nome6">Autoras</a>
 
