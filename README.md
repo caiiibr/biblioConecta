@@ -78,7 +78,7 @@ Na aba "Prateleiras" ao selecionar o ícone "+" uma janela irá se abrir para no
 
 ![cadastro prateleira](./assets/9.jpg)
 
-![cadastro prateleira](./assets/901.jpg)
+![cadastro prateleira](./assets/901.png)
 
 ### Cadastro Livros
 
