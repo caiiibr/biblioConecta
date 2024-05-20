@@ -43,18 +43,26 @@ Existem duas formas de instalação do aplicativo:
 ## 📰 <a id="nome3">Layout</a>
 
 ### Tela de Início
-![tela de cadastro](./assets/inicio.jpg)
+![tela de cadastro](./assets/1.jpg)
 
 ### Cadastro de Usuário
 O cadastro do usuário é feito de forma simples, sendo necessário apenas o nome, e-mail e a criação de uma senha.
 
-![cadastro usuario](./assets/cadastro.jpg)
+![cadastro usuario](./assets/2.jpg)
 
 ### Login
-![login](./assets/login.jpg)
+![login](./assets/3.jpg)
+
+### Mensagem Inicial
+![mensagem inicial](./assets/4.jpg) ![mensagem inicial](./assets/5.jpg)
+
+![mensagem inicial](./assets/6.jpg) ![mensagem inicial](./assets/7.jpg)
+
+![mensagem inicial](./assets/8.jpg)
 
 ### Layout Inicial
-![layout inicio](./assets/layoutinicio.jpg)
+
+![layout inicial](./assets/9.jpg)
 
 ## 🕹️ <a id="nome4">Demonstração</a>
 
