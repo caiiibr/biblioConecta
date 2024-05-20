@@ -4,7 +4,7 @@
 
 O BiblioConecta é um aplicativo criado para que o usuário consiga de forma prática e intuitiva organizar e gerenciar livros. 
 
-O aplicativo permite criar “estantes” para que livros possam ser agrupados de acordo as necessidades do usuário. Os livros são cadastrados pelo número ISBN ou pela leitua do código de barras feita pela câmera do celuar. O BiblioConecta também permite adicionar uma descrição, favoritar e classificar o livro como lido, além de permitir o compartilhamento das estantes criadas e adicionar metas de leitura.
+O aplicativo permite criar “estantes” para que livros possam ser agrupados de acordo as necessidades do usuário. Os livros são cadastrados pelo número ISBN ou pela leitura do código de barras feita pela câmera do celular. O BiblioConecta também permite adicionar uma descrição, favoritar e classificar o livro como lido, além de permitir o compartilhamento das estantes criadas e adicionar metas de leitura.
 
 ## Índice
 <a name="nome"></a> 
@@ -47,7 +47,6 @@ Existem duas formas de instalação do aplicativo:
 ![tela de cadastro](./assets/1.jpg)
 
 ### Cadastro de Usuário
-
 O cadastro do usuário é feito de forma simples, sendo necessário apenas o nome, e-mail e a criação de uma senha.
 
 ![cadastro usuario](./assets/2.jpg)
@@ -57,6 +56,7 @@ O cadastro do usuário é feito de forma simples, sendo necessário apenas o nom
 ![login](./assets/3.jpg)
 
 ### Mensagem Inicial
+Ao entrar no aplicativo um breve tutorial de uso é fornecido ao usuário.
 
 ![mensagem inicial](./assets/4.jpg) ![mensagem inicial](./assets/5.jpg)
 
@@ -65,15 +65,15 @@ O cadastro do usuário é feito de forma simples, sendo necessário apenas o nom
 ![mensagem inicial](./assets/8.jpg)
 
 ### Layout Inicial
+O layout inicial mostra uma de forma prática as diferentes formas de agrupamento: prateleiras de livros, todos os livros e livros favoritos. As formas de cadastro estão indicadas na parte inferior com as funcionalidades: prateleiras, livros e o escaneamento do ISBN pelo código e barras. Na parte inferior ainda são apresentadas as funcionalidades de criação de meta e alterações de pessoais de login do aplicativo.
 
 ![layout inicial](./assets/9.jpg)
 
 ## 🕹️ <a id="nome4">Demonstração</a>
 
-[Vídeo Demonstrativo](https://www.youtube.com/watch?v=QNJEta1ZOPI)
+[Vídeo Demonstrativo](https://youtu.be/hsT9QpYC3Qk?si=xe38TLcKPS4ohVqh)
 
 ### Cadastro de Prateleiras
-
 Na aba "Prateleiras" ao selecionar o ícone "+" uma janela irá se abrir para nomear a prateleira.
 
 ![cadastro prateleira](./assets/9.jpg)
@@ -81,8 +81,7 @@ Na aba "Prateleiras" ao selecionar o ícone "+" uma janela irá se abrir para no
 ![cadastro prateleira](./assets/901.png)
 
 ### Cadastro Livros
-
-Na aba "Livros", inicia-se com a seleção da prateleira na qual se deseja adicionar um livro. Ao selecionar o ícone "+" para adicionar um livro em sua prateleira, o livro deve ser cadastrado com o número do ISBN que pode ser preenchido manualmente ou clicando na lupa que utilizará a câmera do celular para identificar ler o código de barras e identificar o ISBN.
+Na aba "Livros", inicia-se com a seleção da prateleira na qual se deseja adicionar um livro. Ao selecionar o ícone "+" para adicionar um livro em sua prateleira, o livro deve ser cadastrado com o número do ISBN que pode ser preenchido manualmente ou clicando na lupa que utilizará a câmera do celular para ler o código de barras e identificar o ISBN.
 
 ![cadastro livro 4](./assets/11.jpg)
 
@@ -92,7 +91,6 @@ Na aba "Livros", inicia-se com a seleção da prateleira na qual se deseja adici
 
 
 ### Favoritos e Lidos
-
 Ao final do cadastro do livro há a opção de favoritar o livro e informar se o livro já foi lido. Pode-se também favoritar o livro após o cadastro clicando no ícone de coração.
 
 ![favoritando](./assets/103.png)
